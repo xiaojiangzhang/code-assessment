@@ -1,0 +1,57 @@
+<idea-plugin>
+    <id>Coder_Plugin</id>
+    <name>Coder_Plugin</name>
+    <version>1.0</version>
+    <vendor email="18234442017@163.com" url="http://www.xiaojiangzhang.top">CodeQuality</vendor>
+
+<!--    <description><![CDATA[-->
+<!--      Enter short description for your plugin here.<br>-->
+<!--      <em>most HTML tags may be used</em>-->
+<!--    ]]></description>-->
+
+<!--    <change-notes><![CDATA[-->
+<!--      Add change notes here.<br>-->
+<!--      <em>most HTML tags may be used</em>-->
+<!--    ]]>-->
+<!--    </change-notes>-->
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+    <!--<depends>com.intellij.modules.python</depends>-->
+    <!--    <depends>com.intellij.modules.platform</depends>-->
+    <!--    <depends>com.intellij.modules.all</depends>-->
+    <!--<depends>Kite</depends>-->
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+    <project-components>
+        <component>
+            <implementation-class>com.coderPlugin.MainComponent</implementation-class>
+        </component>
+    </project-components>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <applicationConfigurable groupId="tools" instance="Settings"/>
+
+        <toolWindow canCloseContents="true" anchor="bottom"
+                    id="Automatic code generation monitoring" factoryClass="ToolFactoryCompute"></toolWindow>
+    </extensions>
+
+    <!--<actions>-->
+    <!--&lt;!&ndash; Add your actions here &ndash;&gt;-->
+    <!--<action id="Code Analysis Plugin" class="com.coderPlugin.Coder_Plugin" text="Code Analysis Plugin"-->
+    <!--description="codePlugin for Java developer">-->
+    <!--<add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
+    <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl R"/>-->
+    <!--</action>-->
+    <!--<action id="Analysis result" class="com.coderPlugin.DataAnalysisAction" text="Analysis Result"-->
+    <!--description="Analysis Data from coder">-->
+    <!--<add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
+    <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl Q"/>-->
+    <!--</action>-->
+    <!--</actions>-->
+</idea-plugin>

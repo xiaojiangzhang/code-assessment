@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Action" />
+        <option value="Python Script" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Q5lvudCxZPM3uoGWuD2xZNseCH" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.14941406" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
+      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.coderPlugin" />
+      <recent name="com.listen" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\86151\Desktop\sffsd\Coder_Plugin\lib" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com\listen" />
+      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="Coder_Plugin" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="Coder_Plugin" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\xiaojiangzhang\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="" />
+      <created>1551704508972</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1551704508972</updated>
+      <workItem from="1551704512993" duration="7948000" />
+      <workItem from="1551748837310" duration="8111000" />
+      <workItem from="1551767296089" duration="455000" />
+      <workItem from="1551767814779" duration="888000" />
+      <workItem from="1551769471391" duration="6314000" />
+      <workItem from="1551780596912" duration="14518000" />
+      <workItem from="1551844859978" duration="1252000" />
+      <workItem from="1551846664565" duration="3846000" />
+      <workItem from="1551932439603" duration="2329000" />
+      <workItem from="1552111438130" duration="1949000" />
+      <workItem from="1552355828246" duration="31599000" />
+      <workItem from="1552441785585" duration="17368000" />
+      <workItem from="1552470450956" duration="1639000" />
+      <workItem from="1552483787874" duration="592000" />
+      <workItem from="1552566568506" duration="3891000" />
+      <workItem from="1552639668664" duration="178000" />
+      <workItem from="1552915884033" duration="542000" />
+      <workItem from="1552916750828" duration="2089000" />
+      <workItem from="1552960956354" duration="14176000" />
+      <workItem from="1553047258633" duration="11866000" />
+      <workItem from="1553395305844" duration="3783000" />
+      <workItem from="1553410897893" duration="3119000" />
+      <workItem from="1553416993215" duration="8862000" />
+      <workItem from="1553476201856" duration="17356000" />
+      <workItem from="1553521810709" duration="3180000" />
+      <workItem from="1553562825993" duration="11154000" />
+      <workItem from="1553651336100" duration="11153000" />
+      <workItem from="1553748483782" duration="6757000" />
+      <workItem from="1553816853821" duration="1510000" />
+      <workItem from="1553912518593" duration="20094000" />
+      <workItem from="1553996269443" duration="28107000" />
+      <workItem from="1554038544425" duration="160000" />
+      <workItem from="1554038766093" duration="390000" />
+      <workItem from="1554039206325" duration="972000" />
+      <workItem from="1554040226069" duration="412000" />
+      <workItem from="1554040690925" duration="1269000" />
+      <workItem from="1554093515474" duration="2166000" />
+      <workItem from="1554344355102" duration="14000" />
+      <workItem from="1557971203034" duration="20000" />
+      <workItem from="1558321928201" duration="103000" />
+      <workItem from="1558340134221" duration="139000" />
+      <workItem from="1558606389831" duration="50000" />
+      <workItem from="1561720668761" duration="5271000" />
+      <workItem from="1562124441790" duration="933000" />
+      <workItem from="1562125437450" duration="1030000" />
+      <workItem from="1562547022097" duration="603000" />
+      <workItem from="1562550517765" duration="1917000" />
+      <workItem from="1562555440678" duration="398000" />
+      <workItem from="1562557343546" duration="988000" />
+      <workItem from="1562637078218" duration="7267000" />
+      <workItem from="1563155092617" duration="6436000" />
+      <workItem from="1563239802228" duration="11129000" />
+      <workItem from="1563262009492" duration="991000" />
+      <workItem from="1563628983980" duration="296000" />
+      <workItem from="1564213671421" duration="1101000" />
+      <workItem from="1564548605470" duration="1866000" />
+      <workItem from="1566909111844" duration="34000" />
+      <workItem from="1566975122199" duration="36480000" />
+      <workItem from="1567088080672" duration="12433000" />
+      <workItem from="1571470537503" duration="2279000" />
+      <workItem from="1571557638615" duration="1196000" />
+      <workItem from="1572758056492" duration="166000" />
+      <workItem from="1584586848224" duration="10553000" />
+      <workItem from="1584678963446" duration="16794000" />
+      <workItem from="1584715446504" duration="4143000" />
+      <workItem from="1584762740260" duration="21143000" />
+      <workItem from="1584802389884" duration="520000" />
+      <workItem from="1584802964723" duration="293000" />
+      <workItem from="1585737971862" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="398592000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Coder_Plugin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>dom4j-1.6.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
