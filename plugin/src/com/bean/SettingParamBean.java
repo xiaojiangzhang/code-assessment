@@ -8,8 +8,8 @@ public class SettingParamBean {
     private  String tool1 = "IDEA";
     private  String tool2 = "Aixcoder";
     private  String tool3 = "Kite";
-    private  String tool1key = "icons.jar";
-    private  String tool2key = "coder.png";
+    private  String tool1key = "jetbrains";
+    private  String tool2key = "aiXcoder";
     private  String tool3key = "kite";
 
     public String getUser() {

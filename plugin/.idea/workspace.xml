@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="" />
+    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coder_Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/okhttp-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/okhttputils-2_6_2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/okio-1.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ConfigPara/TypeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/ConfigPara/TypeEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/SettingParamBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/SettingParamBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConfigPara/TypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigPara/TypeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bean/SettingParamBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/SettingParamBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/regular/Classify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/regular/Classify.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +38,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -41,18 +63,20 @@
     </option>
   </component>
   <component name="ProjectId" id="1Q5lvudCxZPM3uoGWuD2xZNseCH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +111,8 @@
     <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="Coder_Plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <alternative-path path="C:/Program Files/JetBrains/PyCharm Community Edition 2019.1" alternative-path-enabled="true" />
       <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,83 +225,66 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Coder_Plugin</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>dom4j-1.6.1</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

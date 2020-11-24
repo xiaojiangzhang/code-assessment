@@ -6,13 +6,13 @@ package ConfigPara;
 public class TypeEntity {
     private static String user = "root";
     private static String password = "xiaojiangzhang";
-    private static String dburl = "jdbc:mysql://www.xiaojiangzhang.top:3306/SampleJavaCode?characterEncoding=UTF-8";
+    private static String dburl = "jdbc:mysql://47.101.184.222:3306/SampleJavaCode?characterEncoding=UTF-8";
     private static String driver = "com.mysql.jdbc.Driver";
     private static String tool1 = "IDEA";
     private static String tool2 = "Aixcoder";
     private static String tool3 = "Kite";
-    private static String tool1key = "icons.jar";
-    private static String tool2key = "coder.png";
+    private static String tool1key = "jetbrains";
+    private static String tool2key = "aiXcoder";
     private static String tool3key = "kite";
 
     public static String getTool1() {

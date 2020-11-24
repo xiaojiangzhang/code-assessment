@@ -2,7 +2,7 @@
     <id>Coder_Plugin</id>
     <name>Coder_Plugin</name>
     <version>1.0</version>
-    <vendor email="18234442017@163.com" url="http://www.xiaojiangzhang.top">CodeQuality</vendor>
+    <vendor email="xiaojiang_719@163.com" url="http://www.xiaojiangzhang.top">CodeQuality</vendor>
 
 <!--    <description><![CDATA[-->
 <!--      Enter short description for your plugin here.<br>-->
@@ -16,11 +16,7 @@
 <!--    </change-notes>-->
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="173.0"/>
-    <!--<depends>com.intellij.modules.python</depends>-->
-    <!--    <depends>com.intellij.modules.platform</depends>-->
-    <!--    <depends>com.intellij.modules.all</depends>-->
-    <!--<depends>Kite</depends>-->
+    <depends>com.intellij.modules.python</depends>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->

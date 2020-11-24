@@ -26,6 +26,7 @@ public class MainComponent implements ProjectComponent {
         ActionManager actionManager = ActionManager.getInstance();
 
         actionManager.addAnActionListener(anActionListener);
+
     }
 
     @Override

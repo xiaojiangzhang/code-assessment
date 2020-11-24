@@ -5,6 +5,7 @@ import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 
 import javax.swing.*;
+import java.util.Objects;
 
 //对用户选择后的代码推荐列表进行遍历
 //JList<LookupElement> list
@@ -30,39 +31,43 @@ public class Classify {
     public Classify(LookupElement lookupElement) {
         this.lookupElement = lookupElement;
     }
+
     public void sorting() {
         lookupElementPresentation = LookupElementPresentation.renderElement(lookupElement);
+
         //图标为空默认属于IDEA
-        if (lookupElementPresentation.getTailText()!=null) {//后缀不为空为多行预测
+        String tailText = lookupElementPresentation.getTailText();
+        String iconText = lookupElementPresentation.getIcon().toString();
+        String myItemText = lookupElementPresentation.getItemText();
+        if (tailText != null) {//后缀不为空 多token预测
             if (lookupElementPresentation.getIcon() == null) {
-                IDEAcode = lookupElementPresentation.getItemText();
-            } else if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool1key())) {//IDEA
+                IDEAcode = myItemText;
+            } else if (iconText.contains(TypeEntity.getTool1key())) {//IDEA
                 System.out.println(lookupElementPresentation.getIcon());
-                IDEAcode = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
-            } else if (lookupElementPresentation.getIcon().toString().contains("EmptyIcon")) {
-                IDEAcode = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
-            } else if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool2key())) {//AIXCODER
-                AiXcoder = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
-            } else if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool3key())) {//Kite
-                Kitecode = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
+                IDEAcode = myItemText + lookupElementPresentation.getTailText();
+            } else if (iconText.contains("EmptyIcon")) {
+                IDEAcode = myItemText + lookupElementPresentation.getTailText();
+            } else if (iconText.contains(TypeEntity.getTool2key())) {//AIXCODER
+                AiXcoder = myItemText + lookupElementPresentation.getTailText();
+            } else if (iconText.contains(TypeEntity.getTool3key())) {//Kite
+                Kitecode = myItemText + lookupElementPresentation.getTailText();
             }
-        }else if (lookupElementPresentation.getTailText()==null){//后缀为空单token预测   没有图标默认为IDEA预测代码
+        } else if(tailText == null){
+            lookupElementPresentation.getTailText();//后缀为空单token预测   没有图标默认为IDEA预测代码
             if (lookupElementPresentation.getIcon() == null) {
                 IDEAcode = lookupElementPresentation.getItemText();
-            } else if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool1key())) {//IDEA
+            } else if (iconText.contains(TypeEntity.getTool1key())) {//IDEA
                 IDEAcode = lookupElementPresentation.getItemText();
-            } else if (lookupElementPresentation.getIcon().toString().contains("EmptyIcon")) {
+            } else if (iconText.contains("EmptyIcon")) {
                 IDEAcode = lookupElementPresentation.getItemText();
-            } else if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool2key())) {//AIXCODER
+            } else if (iconText.contains(TypeEntity.getTool2key())) {//AIXCODER
                 AiXcoder = lookupElementPresentation.getItemText();
             }
             if (lookupElementPresentation.getIcon() != null) {
-                if (lookupElementPresentation.getIcon().toString().contains(TypeEntity.getTool3key())) {//Kite
+                if (iconText.contains(TypeEntity.getTool3key())) {//Kite
                     Kitecode = lookupElementPresentation.getItemText();
                 }
             }
-
-
         }
     }
 
