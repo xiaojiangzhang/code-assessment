@@ -20,6 +20,5 @@ public class DataAnalysisAction extends AnAction {
         DataAnalysis dataAnalysis = new DataAnalysis();
         dataAnalysis.setVisible(true);
 
-
     }
 }

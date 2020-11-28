@@ -32,9 +32,9 @@ public class Classify {
         this.lookupElement = lookupElement;
     }
 
+
     public void sorting() {
         lookupElementPresentation = LookupElementPresentation.renderElement(lookupElement);
-
         //图标为空默认属于IDEA
         String tailText = lookupElementPresentation.getTailText();
         String iconText = lookupElementPresentation.getIcon().toString();

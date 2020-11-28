@@ -3,23 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coder_Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/okhttp-3.11.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/okhttputils-2_6_2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/okio-1.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ConfigPara/TypeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/ConfigPara/TypeEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/SettingParamBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/SettingParamBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConfigPara/TypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConfigPara/TypeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bean/SettingParamBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/SettingParamBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/regular/Classify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/regular/Classify.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,13 +16,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Action" />
         <option value="Python Script" />
+        <option value="Action" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="xiaojiang" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -69,7 +57,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -79,19 +68,21 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
+      <recent name="C:\Users\86151\Desktop\sffsd\Coder_Plugin\lib" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com" />
       <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
-      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com\listen" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.coderPlugin" />
       <recent name="com.listen" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\86151\Desktop\sffsd\Coder_Plugin\lib" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
       <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com\listen" />
       <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
     </key>
   </component>
@@ -107,7 +98,66 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Access">
+    <configuration name="Access" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.Access" />
+      <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.DataAnalysis" />
+      <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.coderPlugin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JXL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dvop.csv.JXL" />
+      <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dvop.csv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OPENJAVA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dvop.csv.OPENJAVA" />
+      <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dvop.csv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="access" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="access" />
+      <module name="Coder_Plugin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Plugin" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="Coder_Plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
@@ -127,6 +177,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Access" />
+        <item itemvalue="Application.access" />
+        <item itemvalue="Application.DataAnalysis" />
+        <item itemvalue="Application.OPENJAVA" />
+        <item itemvalue="Application.JXL" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\xiaojiangzhang\AppData\Roaming\Subversion</configuration>
@@ -208,6 +267,21 @@
       <workItem from="1584802964723" duration="293000" />
       <workItem from="1585737971862" duration="12000" />
     </task>
+    <task id="LOCAL-00001" summary="添加界面、保存csv">
+      <created>1606572278200</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606572278200</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加图表access action , 保存record数据到用户路径">
+      <created>1606662803920</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606662803920</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -252,33 +326,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加access actions、保存record数据到用户路径csv" />
+    <MESSAGE value="添加界面、保存csv" />
+    <MESSAGE value="添加图表access action , 保存record数据到用户路径" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加图表access action , 保存record数据到用户路径" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="68" />
+          <url>file://$PROJECT_DIR$/src/com/dvop/csv/DvoCSV.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

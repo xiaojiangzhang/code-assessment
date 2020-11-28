@@ -1,6 +1,8 @@
 package com.coderPlugin;
 
+import ConfigPara.TypeEntity;
 import com.db.JdbcUtils;
+import com.dvop.csv.DvoCSV;
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 import com.intellij.codeInsight.lookup.LookupManager;
@@ -12,16 +14,18 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.ex.AnActionListener;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.ui.Messages;
+import com.opencsv.CSVWriter;
 import com.regular.Classify;
+import groovy.json.StringEscapeUtils;
+import org.bouncycastle.jcajce.provider.symmetric.IDEA;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class ActionVisitor implements AnActionListener {
     private Classify classify;//推荐代码分类器
@@ -109,17 +113,15 @@ public class ActionVisitor implements AnActionListener {
                             selectNum = selectat + 1;
                             list = lookup.getList();
                             len = list.getModel().getSize();
-                        } catch (Exception ex) {
 
-                        }
-                        try {
                             lookupElementPresentation = LookupElementPresentation.renderElement(list.getModel().getElementAt(selectat));
                             if (lookupElementPresentation.getTailText() == null) {
                                 selectvalue = lookupElementPresentation.getItemText();
                             } else {
                                 selectvalue = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
                             }
-                        } catch (Exception e) {
+                        } catch (Exception ex) {
+                            System.out.println(ex);
                         }
                         if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab"))) {
                             System.out.println("lookup长度：" + lookup.getList().getModel().getSize());
@@ -132,7 +134,6 @@ public class ActionVisitor implements AnActionListener {
                                 } catch (Exception e) {
                                 }
                                 if (classify.getAiXcoder() != null) {
-//                                    StringTokenizer st = new StringTokenizer(classify.getAiXcoder(), " ");
                                     AiXcode.add(classify.getAiXcoder());
                                     if (selectat == i) {
                                         selectfrom = "AiXcoder";
@@ -189,7 +190,17 @@ public class ActionVisitor implements AnActionListener {
                             params.add(Math.abs(time_of_codelist - time_of_input));
                             params.add(Math.abs(time_of_select - time_of_input));
                             params.add(deleteCode);
-                            System.out.println("存入数据" + params);
+                            String[] line = {tf.format(new Date()), dataContext.toString(), codeContext, offset, input, selectvalue, Integer.toString(selectNum), selectfrom, IDEcodea.toString()
+                                    , Integer.toString(IDEcodea.size()), IDEACodeIndex.toString(), AiXcode.toString(), Integer.toString(AiXcode.size()), AiXcoderCodeIndex.toString(), Kitecode.toString(), Integer.toString(Kitecode.size()),
+                                    KiteCodeIndex.toString(), Long.toString(Math.abs(time_of_codelist - time_of_input)), Long.toString(Math.abs(time_of_select - time_of_input)), deleteCode};
+
+                            try {
+                                CSVWriter writer = new CSVWriter(new FileWriter(TypeEntity.getCsvPath(), true));
+                                writer.writeNext(line);
+                                writer.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                             try {
                                 boolean flag = jdbcUtils.updateByPreparedStatement(sql, params);
                                 System.out.println(flag + "写入成功");

@@ -32,22 +32,24 @@
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
         <applicationConfigurable groupId="tools" instance="Settings"/>
-
         <toolWindow canCloseContents="true" anchor="bottom"
                     id="Automatic code generation monitoring" factoryClass="ToolFactoryCompute"></toolWindow>
     </extensions>
 
-    <!--<actions>-->
+    <actions>
     <!--&lt;!&ndash; Add your actions here &ndash;&gt;-->
-    <!--<action id="Code Analysis Plugin" class="com.coderPlugin.Coder_Plugin" text="Code Analysis Plugin"-->
-    <!--description="codePlugin for Java developer">-->
-    <!--<add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
-    <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl R"/>-->
-    <!--</action>-->
-    <!--<action id="Analysis result" class="com.coderPlugin.DataAnalysisAction" text="Analysis Result"-->
-    <!--description="Analysis Data from coder">-->
-    <!--<add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
-    <!--<keyboard-shortcut keymap="$default" first-keystroke="ctrl Q"/>-->
-    <!--</action>-->
-    <!--</actions>-->
+<!--    <action id="Code Analysis Plugin" class="com.coderPlugin.Coder_Plugin" text="Code Analysis Plugin"-->
+<!--    description="codePlugin for Java developer">-->
+<!--    <add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
+<!--    <keyboard-shortcut keymap="$default" first-keystroke="ctrl R"/>-->
+<!--    </action>-->
+    <action id="Analysis result" class="com.coderPlugin.DataAnalysisAction" text="Assess"
+    description="Analysis Data from coder">
+    <add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>
+    <keyboard-shortcut keymap="$default" first-keystroke="ctrl Q"/>
+    </action>
+        <action id="access" class="com.coderPlugin.AccessAction" text="Access" description="Access">
+            <add-to-group group-id="CodeMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

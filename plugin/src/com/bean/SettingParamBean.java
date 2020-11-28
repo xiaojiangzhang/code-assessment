@@ -1,16 +1,16 @@
 package com.bean;
 
 public class SettingParamBean {
-    private  String user = "root";
-    private  String password = "xiaojiangzhang";
-    private  String dburl = "jdbc:mysql://47.101.184.222:3306/SampleJavaCode?characterEncoding=UTF-8";
-    private  String driver = "com.mysql.jdbc.Driver";
-    private  String tool1 = "IDEA";
-    private  String tool2 = "Aixcoder";
-    private  String tool3 = "Kite";
-    private  String tool1key = "jetbrains";
-    private  String tool2key = "aiXcoder";
-    private  String tool3key = "kite";
+    private String user = "root";
+    private String password = "xiaojiangzhang";
+    private String dburl = "jdbc:mysql://47.101.184.222:3306/SampleJavaCode?characterEncoding=UTF-8";
+    private String driver = "com.mysql.jdbc.Driver";
+    private String tool1 = "IDEA";
+    private String tool2 = "Aixcoder";
+    private String tool3 = "Kite";
+    private String tool1key = "jetbrains";
+    private String tool2key = "aiXcoder";
+    private String tool3key = "kite";
 
     public String getUser() {
         return user;
