@@ -4,7 +4,7 @@ package ConfigPara;
     保存和获取Settings配置的参数信息 2019/03/28
  */
 public class TypeEntity {
-    private static String csvPath = "C:\\Users\\xiaojiangzhang\\Desktop\\code-assessment\\plugin\\data.csv";
+    private static String csvPath = "C:\\Users\\xiaojiangzhang\\data.csv";
     private static String user = "root";
     private static String password = "xiaojiangzhang";
     private static String dburl = "jdbc:mysql://47.101.184.222:3306/SampleJavaCode?characterEncoding=UTF-8";

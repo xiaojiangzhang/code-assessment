@@ -1,66 +1,77 @@
 package com.bean;
 
+import com.opencsv.bean.CsvBindByName;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CoderData {
+    @CsvBindByName
     private String time;
+    @CsvBindByName
+    private String dataContext;
+    @CsvBindByName
+    private String codeContext;
+    @CsvBindByName
+    private String caretOffset;
+    @CsvBindByName
     private String coder_input;
+    @CsvBindByName
     private String coder_select;
-    private int select_num;
+    @CsvBindByName
+    private String select_num;
+    @CsvBindByName
     private String code_from;
-    private List<String> IDEAcode;
-    private int IDEAcode_num;
-    private List<String> AiXcode;
-    private int AiXcode_num;
-    private List<String> Kitecode;
-
-    public CoderData() {
-        time = null;
-        coder_input = null;
-        coder_select = null;
-        select_num = 1;
-        code_from = null;
-        IDEAcode = new ArrayList<String>();
-        IDEAcode_num = 0;
-        AiXcode = new ArrayList<String>();
-        AiXcode_num = 0;
-    }
+    @CsvBindByName
+    private String IDEAcode;
+    @CsvBindByName
+    private String IDEAcode_num;
+    @CsvBindByName
+    private String IDEAcode_index;
+    @CsvBindByName
+    private String AiXcode;
+    @CsvBindByName
+    private String AiXcode_num;
+    @CsvBindByName
+    private String AiXcoder_index;
+    @CsvBindByName
+    private String KiteCode;
+    @CsvBindByName
+    private String Kitecode_num;
+    @CsvBindByName
+    private String Kitecode_index;
+    @CsvBindByName
+    private String time_input_to_show;
+    @CsvBindByName
+    private String time_of_select_code;
+    @CsvBindByName
+    private String delete_behavior;
 
     @Override
     public String toString() {
         return "CoderData{" +
                 "time='" + time + '\'' +
+                ", dataContext='" + dataContext + '\'' +
+                ", codeContext='" + codeContext + '\'' +
+                ", caretOffset='" + caretOffset + '\'' +
                 ", coder_input='" + coder_input + '\'' +
                 ", coder_select='" + coder_select + '\'' +
-                ", select_num=" + select_num +
+                ", select_num='" + select_num + '\'' +
                 ", code_from='" + code_from + '\'' +
-                ", IDEAcode=" + IDEAcode +
+                ", IDEAcode='" + IDEAcode + '\'' +
                 ", IDEAcode_num='" + IDEAcode_num + '\'' +
-                ", AiXcode=" + AiXcode +
+                ", IDEAcode_index='" + IDEAcode_index + '\'' +
+                ", AiXcode='" + AiXcode + '\'' +
                 ", AiXcode_num='" + AiXcode_num + '\'' +
-                ", Kitecode=" + Kitecode +
+                ", AiXcoder_index='" + AiXcoder_index + '\'' +
+                ", KiteCode='" + KiteCode + '\'' +
                 ", Kitecode_num='" + Kitecode_num + '\'' +
+                ", Kitecode_index='" + Kitecode_index + '\'' +
+                ", time_input_to_show='" + time_input_to_show + '\'' +
+                ", time_of_select_code='" + time_of_select_code + '\'' +
+                ", delete_behavior='" + delete_behavior + '\'' +
                 '}';
     }
-
-    public List<String> getKitecode() {
-        return Kitecode;
-    }
-
-    public void setKitecode(List<String> kitecode) {
-        Kitecode = kitecode;
-    }
-
-    public String getKitecode_num() {
-        return Kitecode_num;
-    }
-
-    public void setKitecode_num(String kitecode_num) {
-        Kitecode_num = kitecode_num;
-    }
-
-    private String Kitecode_num;
 
     public String getTime() {
         return time;
@@ -68,6 +79,30 @@ public class CoderData {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getDataContext() {
+        return dataContext;
+    }
+
+    public void setDataContext(String dataContext) {
+        this.dataContext = dataContext;
+    }
+
+    public String getCodeContext() {
+        return codeContext;
+    }
+
+    public void setCodeContext(String codeContext) {
+        this.codeContext = codeContext;
+    }
+
+    public String getCaretOffset() {
+        return caretOffset;
+    }
+
+    public void setCaretOffset(String caretOffset) {
+        this.caretOffset = caretOffset;
     }
 
     public String getCoder_input() {
@@ -86,11 +121,11 @@ public class CoderData {
         this.coder_select = coder_select;
     }
 
-    public int getSelect_num() {
+    public String getSelect_num() {
         return select_num;
     }
 
-    public void setSelect_num(int select_num) {
+    public void setSelect_num(String select_num) {
         this.select_num = select_num;
     }
 
@@ -102,35 +137,99 @@ public class CoderData {
         this.code_from = code_from;
     }
 
-    public List<String> getIDEAcode() {
+    public String getIDEAcode() {
         return IDEAcode;
     }
 
-    public void setIDEAcode(List<String> IDEAcode) {
+    public void setIDEAcode(String IDEAcode) {
         this.IDEAcode = IDEAcode;
     }
 
-    public int getIDEAcode_num() {
+    public String getIDEAcode_num() {
         return IDEAcode_num;
     }
 
-    public void setIDEAcode_num(int IDEAcode_num) {
+    public void setIDEAcode_num(String IDEAcode_num) {
         this.IDEAcode_num = IDEAcode_num;
     }
 
-    public List<String> getAiXcode() {
+    public String getIDEAcode_index() {
+        return IDEAcode_index;
+    }
+
+    public void setIDEAcode_index(String IDEAcode_index) {
+        this.IDEAcode_index = IDEAcode_index;
+    }
+
+    public String getAiXcode() {
         return AiXcode;
     }
 
-    public void setAiXcode(List<String> aiXcode) {
+    public void setAiXcode(String aiXcode) {
         AiXcode = aiXcode;
     }
 
-    public int getAiXcode_num() {
+    public String getAiXcode_num() {
         return AiXcode_num;
     }
 
-    public void setAiXcode_num(int aiXcode_num) {
+    public void setAiXcode_num(String aiXcode_num) {
         AiXcode_num = aiXcode_num;
+    }
+
+    public String getAiXcoder_index() {
+        return AiXcoder_index;
+    }
+
+    public void setAiXcoder_index(String aiXcoder_index) {
+        AiXcoder_index = aiXcoder_index;
+    }
+
+    public String getKiteCode() {
+        return KiteCode;
+    }
+
+    public void setKiteCode(String kiteCode) {
+        KiteCode = kiteCode;
+    }
+
+    public String getKitecode_num() {
+        return Kitecode_num;
+    }
+
+    public void setKitecode_num(String kitecode_num) {
+        Kitecode_num = kitecode_num;
+    }
+
+    public String getKitecode_index() {
+        return Kitecode_index;
+    }
+
+    public void setKitecode_index(String kitecode_index) {
+        Kitecode_index = kitecode_index;
+    }
+
+    public String getTime_input_to_show() {
+        return time_input_to_show;
+    }
+
+    public void setTime_input_to_show(String time_input_to_show) {
+        this.time_input_to_show = time_input_to_show;
+    }
+
+    public String getTime_of_select_code() {
+        return time_of_select_code;
+    }
+
+    public void setTime_of_select_code(String time_of_select_code) {
+        this.time_of_select_code = time_of_select_code;
+    }
+
+    public String getDelete_behavior() {
+        return delete_behavior;
+    }
+
+    public void setDelete_behavior(String delete_behavior) {
+        this.delete_behavior = delete_behavior;
     }
 }

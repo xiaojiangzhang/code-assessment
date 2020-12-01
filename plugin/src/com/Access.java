@@ -121,7 +121,7 @@ class BarChart {
     public BarChart() {
         CategoryDataset dataset = getDataSet();
         JFreeChart chart = ChartFactory.createBarChart3D(
-                "生成代码占用空间", // 图表标题
+                " ", // 图表标题
                 "代码自动生成工具", // 目录轴的显示标签
                 "大小", // 数值轴的显示标签
                 dataset, // 数据集
@@ -171,7 +171,7 @@ class PieChart {
 
     public PieChart() {
         DefaultPieDataset data = getDataSet();
-        JFreeChart chart = ChartFactory.createPieChart3D("成功推荐代码数量", data, true, false, false);
+        JFreeChart chart = ChartFactory.createPieChart3D(" ", data, true, false, false);
         //设置百分比
         PiePlot pieplot = (PiePlot) chart.getPlot();
         DecimalFormat df = new DecimalFormat("0.00%");//获得一个DecimalFormat对象，主要是设置小数问题
@@ -211,7 +211,7 @@ class TimeSeriesChart {
 
     public TimeSeriesChart() {
         XYDataset xydataset = createDataset();
-        JFreeChart jfreechart = ChartFactory.createTimeSeriesChart("选择代码按键次数", "time", "times", xydataset, true, true, true);
+        JFreeChart jfreechart = ChartFactory.createTimeSeriesChart(" ", "time", "times", xydataset, true, true, true);
         XYPlot xyplot = (XYPlot) jfreechart.getPlot();
         DateAxis dateaxis = (DateAxis) xyplot.getDomainAxis();
         dateaxis.setDateFormatOverride(new SimpleDateFormat("MMM-yyyy"));

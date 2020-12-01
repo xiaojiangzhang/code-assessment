@@ -14,7 +14,6 @@ public class DataAnalyzer {
     private int IDEAfullLine_num = 0;//整行代码补全次数
     private int IDEAmultiLine_num = 0;
     private String IDEAcodeSize;
-
     private float AiXcoder_select_sum = 0;//AiXcoder正确推荐项完成键数
     private int AiXcoder_sum = 0;//AiXcoder正确推荐次数
     private float AiXcoder_listsize = 0;//AiXcoder推荐列表长度
