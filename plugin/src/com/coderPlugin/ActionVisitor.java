@@ -1,8 +1,8 @@
 package com.coderPlugin;
 
 import ConfigPara.TypeEntity;
+import com.bean.CodeIfo;
 import com.db.JdbcUtils;
-import com.dvop.csv.DvoCSV;
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 import com.intellij.codeInsight.lookup.LookupManager;
@@ -16,18 +16,17 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.ui.Messages;
 import com.opencsv.CSVWriter;
 import com.regular.Classify;
-import groovy.json.StringEscapeUtils;
-import org.bouncycastle.jcajce.provider.symmetric.IDEA;
 import org.jetbrains.annotations.NotNull;
-
 import javax.swing.*;
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ActionVisitor implements AnActionListener {
+    //创建codeinfo对象
+    CodeIfo codeIfo = new CodeIfo();
+
     private Classify classify;//推荐代码分类器
     private List<String> IDEcodea = new ArrayList<String>();
     private List<String> AiXcode = new ArrayList<String>();
@@ -54,14 +53,11 @@ public class ActionVisitor implements AnActionListener {
     private List<String> actionType = new ArrayList<String>();
     private LookupImpl lookup;
 
-    ActionVisitor() {
-        System.out.println("action 构造函数执行！！！");
-    }
 
     @Override
     public void beforeActionPerformed(AnAction action, DataContext dataContext, AnActionEvent event) {
+
         String actionContext = action.getTemplatePresentation().getText();
-//        String a = action.getTemplateText();
         String actionPlace = event.getPlace();
         String actionDescription = action.getTemplatePresentation().getDescription();
         System.out.println("action内容：" + actionContext);
@@ -98,7 +94,7 @@ public class ActionVisitor implements AnActionListener {
                             List<Object> params = new ArrayList<Object>();
                             params.add(deleteCode);
                             jdbcUtils.updateByPreparedStatement(sql2, params);
-                            deleteCode = "";
+
                         } catch (Exception ex) {
                             System.out.println("删除代码入库错误");
                             ex.printStackTrace();
@@ -169,7 +165,7 @@ public class ActionVisitor implements AnActionListener {
                             String sql = "insert into jicheng (time, dataContext,codeContext,caretOffset,coder_input,coder_select,select_num,code_from,IDEAcode," +
                                     "IDEAcode_num,IDEAcode_index,AiXcode,AiXcode_num,AiXcoder_index,KiteCode,Kitecode_num,Kitecode_index," +
                                     "time_input_to_show,time_of_select_code,delete_behavior) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-                            List<Object> params = new ArrayList<Object>();
+                            List<Object> params = new ArrayList<>();
                             params.add(tf.format(new Date()));
                             params.add(dataContext.toString());
                             params.add(codeContext);
@@ -193,7 +189,6 @@ public class ActionVisitor implements AnActionListener {
                             String[] line = {tf.format(new Date()), dataContext.toString(), codeContext, offset, input, selectvalue, Integer.toString(selectNum), selectfrom, IDEcodea.toString()
                                     , Integer.toString(IDEcodea.size()), IDEACodeIndex.toString(), AiXcode.toString(), Integer.toString(AiXcode.size()), AiXcoderCodeIndex.toString(), Kitecode.toString(), Integer.toString(Kitecode.size()),
                                     KiteCodeIndex.toString(), Long.toString(Math.abs(time_of_codelist - time_of_input)), Long.toString(Math.abs(time_of_select - time_of_input)), deleteCode};
-
                             try {
                                 CSVWriter writer = new CSVWriter(new FileWriter(TypeEntity.getCsvPath(), true));
                                 writer.writeNext(line);
@@ -213,6 +208,7 @@ public class ActionVisitor implements AnActionListener {
                             IDEcodea.clear();
                             AiXcode.clear();
                             Kitecode.clear();
+                            deleteCode = "";
                             input = "";
                             selectfrom = null;
                             time_of_codelist = 0;

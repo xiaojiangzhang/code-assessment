@@ -47,7 +47,6 @@ public class DvoCSV {
         String filePath = writePath;
         try {
             CsvWriter csvWriter = new CsvWriter(writePath, ',', Charset.forName("UTF-8"));
-            //String [] header = {"SkuId","SsuId","图片地址","大小(bit)","高度","宽度"};
             csvWriter.writeRecord(header, true);
             csvWriter.close();
         } catch (Exception e) {

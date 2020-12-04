@@ -5,7 +5,7 @@ import com.opencsv.bean.CsvBindByName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoderData {
+public class CodeIfo {
     @CsvBindByName
     private String time;
     @CsvBindByName

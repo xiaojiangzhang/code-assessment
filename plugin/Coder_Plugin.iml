@@ -16,6 +16,8 @@
     <orderEntry type="library" name="commons-collections-3.2.1" level="project" />
     <orderEntry type="library" name="commons-collections4-4.4" level="project" />
     <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
+    <orderEntry type="library" name="plugin-rapidly-0.5.1.6" level="project" />
+    <orderEntry type="library" name="commons-lang3-3.11" level="project" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="C:\Python27\python.exe" />

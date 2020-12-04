@@ -1,4 +1,4 @@
-import com.PersistentState.PersistentState;
+//import com.PersistentState.PersistentState;
 import com.bean.SettingParamBean;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
@@ -37,7 +37,7 @@ public class Settings implements Configurable {
     private boolean is_Modified = false;
     private SettingParamBean settingParamBean;
     private SettingParamBean settingParamBeanSave = new SettingParamBean();
-    private File file = new File(PersistentState.getFilepath());
+//    private File file = new File(PersistentState.getFilepath());
 
 
     @Nls(capitalization = Nls.Capitalization.Title)
@@ -50,13 +50,13 @@ public class Settings implements Configurable {
     //初始化控件 2019/03/28
     public JComponent createComponent() {
 //        this.persistentState = PersistentState.getInstance();
-        if (!file.exists()){
-            System.out.println("创建配置文件");
-            PersistentState.firstwriteSettingParamBean();
-        }
-        settingParamBean = PersistentState.readSettingParamBean();
-        initComponent();    //初始化组件内容
-        addComponentListener(); //添加监听
+//        if (!file.exists()){
+//            System.out.println("创建配置文件");
+//            PersistentState.firstwriteSettingParamBean();
+//        }
+//        settingParamBean = PersistentState.readSettingParamBean();
+//        initComponent();    //初始化组件内容
+//        addComponentListener(); //添加监听
         return mPanel;
     }
 
@@ -82,7 +82,7 @@ public class Settings implements Configurable {
             settingParamBeanSave.setTool1key(Tf_tool1key.getText());
             settingParamBeanSave.setTool2key(Tf_tool2key.getText());
             settingParamBeanSave.setTool3key(Tf_tool3key.getText());
-            PersistentState.writeSettingParamBean(settingParamBeanSave);
+//            PersistentState.writeSettingParamBean(settingParamBeanSave);
 //            TypeEntity.setUser(Tf_user.getText());
 //            TypeEntity.setPassword(Tf_password.getText());
 //            TypeEntity.setDburl(Tf_dburl.getText());

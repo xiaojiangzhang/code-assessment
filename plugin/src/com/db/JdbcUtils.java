@@ -1,9 +1,6 @@
 package com.db;
 
-import com.PersistentState.PersistentState;
-import com.bean.SettingParamBean;
-import org.apache.xmlbeans.impl.xb.xsdschema.Facet;
-
+import ConfigPara.TypeEntity;
 import java.lang.reflect.Field;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,11 +14,10 @@ import java.util.List;
 import java.util.Map;
 
 public class JdbcUtils {
-    private SettingParamBean settingParamBean = PersistentState.readSettingParamBean();
-    private String USERNAME = settingParamBean.getUser();
-    private String PASSWORD = settingParamBean.getPassword();
-    private String DRIVER = settingParamBean.getDriver();
-    private String URL = settingParamBean.getDburl();
+    private String USERNAME = TypeEntity.getUser();
+    private String PASSWORD = TypeEntity.getPassword();
+    private String DRIVER = TypeEntity.getDriver();
+    private String URL = TypeEntity.getDburl();
     private Connection connection;
     private PreparedStatement pstmt;
     private ResultSet resultSet;

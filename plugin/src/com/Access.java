@@ -1,5 +1,9 @@
 package com;
 
+import ConfigPara.TypeEntity;
+import com.bean.CodeIfo;
+import com.regular.CodeInfoAna;
+import com.tools.OpenCSVReadBeansEx;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -27,6 +31,9 @@ import java.awt.event.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class Access extends JDialog {
     private JPanel contentPane;
@@ -35,9 +42,9 @@ public class Access extends JDialog {
     private JButton buttonCancel;
     private JPanel aaa;
     private JPanel bbb;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JButton 确定Button;
+    private JTextField startTimeTextFiled;
+    private JTextField endTimeTextFiled;
+    private JButton okButton;
     private JTable accessTable;
     private JPanel f1;
     private JPanel f2;
@@ -46,25 +53,54 @@ public class Access extends JDialog {
 
     public Access() {
         setContentPane(contentPane);
-
         contentPane.setBounds(50, 50, 800, 600);
         setModal(true);
-//        getRootPane().setDefaultButton(buttonOK);
+
         setTitle("access");
         setSize(500, 400); // 设置窗口大小 2018/3/29 19:08
         Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-        int Swing1x = 750;
+        int Swing1x = 1000;
         int Swing1y = 500;
         setBounds((screensize.width - Swing1x) / 2, (screensize.height - Swing1y) / 2 - 100, Swing1x, Swing1y);
-        f1.setLayout(new GridLayout(1, 1, 5, 5));
-        f2.setLayout(new GridLayout(1, 1, 5, 5));
-        f3.setLayout(new GridLayout(1, 1, 5, 5));
+        SimpleDateFormat tf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 
-        f1.add(new BarChart().getChartPanel());
-        f2.add(new PieChart().getChartPanel());
-        f3.add(new TimeSeriesChart().getChartPanel());
+        startTimeTextFiled.setText("");
+        endTimeTextFiled.setText(tf.format(new Date()));
+
+        okButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String startTime = startTimeTextFiled.getText();
+                String endTime = endTimeTextFiled.getText();
+//                使用startTime endTime 筛选数据
+                new Thread() {
+                    @Override
+                    public void run() {
+                        f1.removeAll();
+                        f2.removeAll();
+                        f3.removeAll();
+                        OpenCSVReadBeansEx openCSVReadBeansEx = new OpenCSVReadBeansEx();
+                        List<CodeIfo> codeIfoList = openCSVReadBeansEx.readBeans("2020/11/29 17:40:20", "2020/12/2 14:59:11", TypeEntity.getCsvPath());
+                        CodeInfoAna codeInfoAna = new CodeInfoAna(codeIfoList);
+                        codeInfoAna.initAna();
+                        f1.setLayout(new GridLayout(1, 1, 5, 5));
+                        f2.setLayout(new GridLayout(1, 1, 5, 5));
+                        f3.setLayout(new GridLayout(1, 1, 5, 5));
+                        f1.add(new BarChart(codeInfoAna).getChartPanel());
+                        f2.add(new PieChart(codeInfoAna).getChartPanel());
+                        f3.add(new TimeSeriesChart(codeInfoAna).getChartPanel());
+                        contentPane.updateUI();
+                    }
+                }.start();
 
 
+//                contentPane.repaint();
+//                f3.repaint();
+                System.out.println("------------------------------okButton");
+
+            }
+
+        });
         buttonCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onCancel();
@@ -91,9 +127,11 @@ public class Access extends JDialog {
         // add your code here
         dispose();
     }
-    private void accessTable(){
+
+    private void accessTable() {
 //        accessTable.
     }
+
     private void onCancel() {
         // add your code here if necessary
         dispose();
@@ -104,22 +142,25 @@ public class Access extends JDialog {
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
-
-
-//        JFrame frame=new JFrame("Java数据统计图");
-//        frame.setLayout(new GridLayout(2,2,10,10));
-//        frame.add(new BarChart().getChartPanel());           //添加柱形图
-//        frame.add(new TimeSeriesChart().getChartPanel());
-//        frame.setBounds(50, 50, 800, 600);
-//        frame.setVisible(true);
     }
 }
 
 class BarChart {
     ChartPanel frame1;
 
-    public BarChart() {
-        CategoryDataset dataset = getDataSet();
+    public BarChart(CodeInfoAna codeInfoAna) {
+//        CategoryDataset dataset = new DefaultCategoryDataset();
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+        dataset.addValue(codeInfoAna.getIDEAfullLine_num(), "单行代码生成次数", "IDEA");
+        dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "单行代码生成次数", "aiXcoder");
+        dataset.addValue(codeInfoAna.getIDEAmultiLine_num(), "多行代码生成次数", "IDEA");
+        dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "多行代码生成次数", "aiXcoder");
+        dataset.addValue(codeInfoAna.getIDEA_sum(), "成功推荐代码次数", "IDEA");
+        dataset.addValue(codeInfoAna.getAiXcoder_sum(), "成功推荐代码次数", "aiXcoder");
+        dataset.addValue(codeInfoAna.getIDEA_listsize(), "平均推荐代码列表长度", "IDEA");
+        dataset.addValue(codeInfoAna.getAiXcoder_listsize(), "平均推荐代码列表长度", "aiXcoder");
+
         JFreeChart chart = ChartFactory.createBarChart3D(
                 " ", // 图表标题
                 "代码自动生成工具", // 目录轴的显示标签
@@ -147,19 +188,6 @@ class BarChart {
 
     }
 
-    private static CategoryDataset getDataSet() {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(100, "IDEA", "单行代码生成次数");
-        dataset.addValue(100, "aiXcoder", "单行代码生成次数");
-        dataset.addValue(200, "IDEA", "多行代码生成次数");
-        dataset.addValue(200, "aiXcoder", "多行代码生成次数");
-        dataset.addValue(200, "IDEA", "成功推荐代码次数");
-        dataset.addValue(300, "aiXcoder", "成功推荐代码次数");
-        dataset.addValue(300, "IDEA", "平均推荐代码列表长度");
-        dataset.addValue(300, "aiXcoder", "平均推荐代码列表长度");
-        return dataset;
-    }
-
     public ChartPanel getChartPanel() {
         return frame1;
 
@@ -169,8 +197,10 @@ class BarChart {
 class PieChart {
     ChartPanel frame1;
 
-    public PieChart() {
-        DefaultPieDataset data = getDataSet();
+    public PieChart(CodeInfoAna codeInfoAna) {
+        DefaultPieDataset data = new DefaultPieDataset();
+        data.setValue("aiXcoder", codeInfoAna.getAiXcoder_sum());
+        data.setValue("IDEA", codeInfoAna.getIDEA_sum());
         JFreeChart chart = ChartFactory.createPieChart3D(" ", data, true, false, false);
         //设置百分比
         PiePlot pieplot = (PiePlot) chart.getPlot();
@@ -193,12 +223,6 @@ class PieChart {
         chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 10));
     }
 
-    private static DefaultPieDataset getDataSet() {
-        DefaultPieDataset dataset = new DefaultPieDataset();
-        dataset.setValue("aiXcoder", 100);
-        dataset.setValue("IDEA", 200);
-        return dataset;
-    }
 
     public ChartPanel getChartPanel() {
         return frame1;
@@ -209,8 +233,8 @@ class PieChart {
 class TimeSeriesChart {
     ChartPanel frame1;
 
-    public TimeSeriesChart() {
-        XYDataset xydataset = createDataset();
+    public TimeSeriesChart(CodeInfoAna codeInfoAna) {
+        XYDataset xydataset = createDataset(codeInfoAna);
         JFreeChart jfreechart = ChartFactory.createTimeSeriesChart(" ", "time", "times", xydataset, true, true, true);
         XYPlot xyplot = (XYPlot) jfreechart.getPlot();
         DateAxis dateaxis = (DateAxis) xyplot.getDomainAxis();
@@ -225,10 +249,16 @@ class TimeSeriesChart {
 
     }
 
-    private static XYDataset createDataset() {  //这个数据集有点多，但都不难理解
-        TimeSeries timeseries = new TimeSeries("IDEA",
-                org.jfree.data.time.Month.class);
-        timeseries.add(new Month(2, 2001), 1.80000000000001D);
+    private static XYDataset createDataset(CodeInfoAna codeInfoAna) {  //这个数据集有点多，但都不难理解
+        List<Integer> idea_key_nums = codeInfoAna.getIDEA_key_nums();
+        List<Integer> aiXcode_key_nums = codeInfoAna.getAiXcode_key_nums();
+        TimeSeries timeseries = new TimeSeries("IDEA");
+//        for (Integer integer: idea_key_nums){
+//            timeseries.add(new Month(2, 2001), 1.80000000000001D);
+//
+//        }
+
+
         timeseries.add(new Month(3, 2001), 7.30000000000001D);
         timeseries.add(new Month(4, 2001), 3.80000000000001D);
         timeseries.add(new Month(5, 2001), 7.59999999999999D);
