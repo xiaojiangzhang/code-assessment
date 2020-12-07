@@ -26,15 +26,6 @@ public class CodeInfoAna {
     private int AiXcodermultLine_num = 0;
     private String AiXcodeSize;
 
-    private float Kite_select_sum = 0;//AiXcoder正确推荐项完成键数
-    private int Kite_sum = 0;//AiXcoder正确推荐次数
-
-
-    private float Kite_listsize = 0;//AiXcoder推荐列表长度
-    private String Kitecode = "";//AiXcoder生成代码
-    private int KitefullLine_num = 0;
-    private int KitemultLine_num = 0;
-    private String KitecodeSize;
     private int i = 0;
 
     public CodeInfoAna(List<CodeIfo> codeInfoAnas) {
@@ -45,58 +36,38 @@ public class CodeInfoAna {
         for (i = 0; i < codeIfoList.size(); i++) {
             IDEA_listsize += Integer.parseInt(codeIfoList.get(i).getIDEAcode_num());//IDEA推荐列表长度
             AiXcoder_listsize += Integer.parseInt(codeIfoList.get(i).getAiXcode_num());//AiXcode推荐列表长度
-            Kite_listsize += Integer.parseInt(codeIfoList.get(i).getKitecode_num());
             if (codeIfoList.get(i).getCode_from().contains("IDEA")) {
                 IDEA_sum += 1;
-                IDEA_select_sum += Integer.parseInt(codeIfoList.get(i).getSelect_num());
-                if (codeIfoList.get(i).getSelect_num() != null) {
-                    IDEA_key_nums.add(Integer.valueOf(codeIfoList.get(i).getSelect_num()));
+                IDEA_select_sum += codeIfoList.get(i).getSelect_num();
 
-                }
-                if (codeIfoList.get(i).getCoder_select().contains(";")) {
+                IDEA_key_nums.add(codeIfoList.get(i).getSelect_num());
+
+
+                if (codeIfoList.get(i).getCoder_select().contains(")") || codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
                     IDEAfullLine_num++;
-                } else if (codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
-                    IDEAmultiLine_num++;
                 }
             }
             if (codeIfoList.get(i).getCode_from().contains("AiXcoder")) {
                 AiXcoder_sum += 1;
-                AiXcoder_select_sum += Integer.parseInt(codeIfoList.get(i).getSelect_num());
-                if (codeIfoList.get(i).getSelect_num() != null) {
-                    aiXcode_key_nums.add(Integer.valueOf(codeIfoList.get(i).getSelect_num()));
+                AiXcoder_select_sum += codeIfoList.get(i).getSelect_num();
+                aiXcode_key_nums.add(codeIfoList.get(i).getSelect_num());
 
-                }
 
-                if (codeIfoList.get(i).getCoder_select().contains(";")) {
+                if (codeIfoList.get(i).getCoder_select().contains(")") || codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
                     AiXcoderfullLine_num++;
-                } else if (codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
-                    AiXcodermultLine_num++;
-                }
-            }
-            if (codeIfoList.get(i).getCode_from().contains("Kite")) {
-                Kite_sum += 1;
-                Kite_select_sum += Integer.parseInt(codeIfoList.get(i).getSelect_num());
-                if (codeIfoList.get(i).getCoder_select().contains(";") || codeIfoList.get(i).getCoder_select().contains("\n")) {
-                    KitefullLine_num++;
-                } else if (codeIfoList.get(i).getCoder_select().contains("\n")) {
-                    KitemultLine_num++;
                 }
             }
             IDEAcode += codeIfoList.get(i).getIDEAcode();
             AiXcode += codeIfoList.get(i).getAiXcode();
-            Kitecode += codeIfoList.get(i).getKiteCode();
         }
         IDEA_select_sum = IDEA_select_sum / IDEA_sum;//IDEA正确推荐项平均完成键数
         AiXcoder_select_sum = AiXcoder_select_sum / AiXcoder_sum;//Aixcoder正确推荐项平均完成键数
-        Kite_select_sum = Kite_select_sum / Kite_sum;//Kite正确推荐项平均完成键数
 
         IDEA_listsize = IDEA_listsize / i;//IDEA平均推荐列表长度
         AiXcoder_listsize = AiXcoder_listsize / i;//aixcoder平均推荐列表长度
-        Kite_listsize = Kite_listsize / i;//Kite平均推荐列表长度
 
         IDEAcodeSize = getPrintSize(IDEAcode.getBytes().length);//IDEA生成总代码占用空间
         AiXcodeSize = getPrintSize(AiXcode.getBytes().length);//aixcoder生成总代码占用空间
-        KitecodeSize = getPrintSize(Kitecode.getBytes().length);
 
     }
 
@@ -195,34 +166,6 @@ public class CodeInfoAna {
 
     public String getAiXcodeSize() {
         return AiXcodeSize;
-    }
-
-    public float getKite_select_sum() {
-        return Kite_select_sum;
-    }
-
-    public int getKite_sum() {
-        return Kite_sum;
-    }
-
-    public float getKite_listsize() {
-        return Kite_listsize;
-    }
-
-    public String getKitecode() {
-        return Kitecode;
-    }
-
-    public int getKitefullLine_num() {
-        return KitefullLine_num;
-    }
-
-    public int getKitemultLine_num() {
-        return KitemultLine_num;
-    }
-
-    public String getKitecodeSize() {
-        return KitecodeSize;
     }
 
     public int getI() {

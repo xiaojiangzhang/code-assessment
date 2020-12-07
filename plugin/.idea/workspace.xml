@@ -2,43 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="添加图表access action , 保存record数据到用户路径">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/plugin_rapidly_0_5_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.11.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/bean/TimeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionMonitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/regular/CodeInfoAna.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jython_standalone_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jython-standalone-2.7.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dialog/Python.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dialog/TestPython.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tools/BarChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tools/PieChart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tools/TimeSeriesChart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Coder_Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/Settings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/Settings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/BarChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/BarChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/PersistentState/PersistentState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/PieChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/PieChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/TimeSeriesChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/TimeSeriesChart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/CoderData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/items.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute$3$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/ToolFactoryCompute.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/Access.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/BarChart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/DataAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/PieChart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/TimeSeriesChart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/CodeIfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/CodeIfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/AccessAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/AccessAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/Tools.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/db/JdbcUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/db/JdbcUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dvop/csv/DvoCSV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dvop/csv/DvoCSV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dvop/csv/OPENJAVA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/CoderInputCorrect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/DataAnalysisAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/DataAnalysisAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/CodeInfoAna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/CodeInfoAna.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/OpenCSVReadBeansEx.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/OpenCSVReadBeansEx.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Access.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Access.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/Access.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/PersistentState/PersistentState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bean/CoderData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/CodeIfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToolFactoryCompute.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToolFactoryCompute.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Access.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/Access.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/DataAnalysis.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/DataAnalysis.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/DataAnalysis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/DataAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bean/CodeIfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/CodeIfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/AccessAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/AccessAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/Tools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/db/JdbcUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/db/JdbcUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dvop/csv/DvoCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dvop/csv/DvoCSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dvop/csv/OPENJAVA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/regular/CoderInputCorrect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/DataAnalysisAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/DataAnalysisAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/regular/CodeInfoAna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/regular/CodeInfoAna.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tools/OpenCSVReadBeansEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/OpenCSVReadBeansEx.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,8 +110,9 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="237" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
@@ -104,25 +124,26 @@
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.nnthink.aixcoder.config.Config" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com\dialog" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
+      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.coderPlugin" />
+      <recent name="com.listen" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
       <recent name="C:\Users\86151\Desktop\sffsd\Coder_Plugin\lib" />
       <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com" />
       <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
       <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com\listen" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.coderPlugin" />
-      <recent name="com.listen" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
-      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -137,13 +158,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Access">
-    <configuration name="Access" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.Access" />
+  <component name="RunManager" selected="Application.TestPython">
+    <configuration name="Access (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dialog.Access" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.*" />
+          <option name="PATTERN" value="com.dialog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,12 +172,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataAnalysis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.DataAnalysis" />
+    <configuration name="LineCharts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tools.LineCharts" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.coderPlugin.*" />
+          <option name="PATTERN" value="com.tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -177,12 +198,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bean.Test" />
+    <configuration name="Python" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dialog.Python" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.bean.*" />
+          <option name="PATTERN" value="com.dialog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -190,9 +211,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="access" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="access" />
+    <configuration name="TestPython" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dialog.TestPython" />
       <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dialog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,13 +243,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Access (1)" />
+      <item itemvalue="Application.OpenCSVReadBeansEx" />
+      <item itemvalue="Application.Python" />
+      <item itemvalue="Plugin.Plugin" />
+      <item itemvalue="Application.LineCharts" />
+      <item itemvalue="Application.TestPython" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Access" />
+        <item itemvalue="Application.TestPython" />
+        <item itemvalue="Application.Access (1)" />
         <item itemvalue="Application.OpenCSVReadBeansEx" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.access" />
-        <item itemvalue="Application.DataAnalysis" />
+        <item itemvalue="Application.Python" />
+        <item itemvalue="Application.LineCharts" />
       </list>
     </recent_temporary>
   </component>
@@ -377,17 +412,6 @@
     <MESSAGE value="添加界面、保存csv" />
     <MESSAGE value="添加图表access action , 保存record数据到用户路径" />
     <option name="LAST_COMMIT_MESSAGE" value="添加图表access action , 保存record数据到用户路径" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/tools/OpenCSVReadBeansEx.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

@@ -1,7 +1,7 @@
 package com.coderPlugin;
 
 import ConfigPara.DialogInfomation;
-import com.DataAnalysis;
+import com.dialog.DataAnalysis;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 

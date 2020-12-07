@@ -3,7 +3,6 @@ package com.bean;
 import com.opencsv.bean.CsvBindByName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CodeIfo {
     @CsvBindByName
@@ -19,7 +18,7 @@ public class CodeIfo {
     @CsvBindByName
     private String coder_select;
     @CsvBindByName
-    private String select_num;
+    private int select_num = 1;
     @CsvBindByName
     private String code_from;
     @CsvBindByName
@@ -121,11 +120,11 @@ public class CodeIfo {
         this.coder_select = coder_select;
     }
 
-    public String getSelect_num() {
+    public int getSelect_num() {
         return select_num;
     }
 
-    public void setSelect_num(String select_num) {
+    public void setSelect_num(int select_num) {
         this.select_num = select_num;
     }
 

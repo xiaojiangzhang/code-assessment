@@ -5,6 +5,7 @@ import com.dvop.csv.DvoCSV;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ex.AnActionListener;
 import com.intellij.openapi.components.ProjectComponent;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -45,6 +46,8 @@ public class MainComponent implements ProjectComponent {
 //        初始化action监听
         ActionManager actionManager = ActionManager.getInstance();
         actionManager.addAnActionListener(anActionListener);
+
+//        初始化线程池，定时上传数据
 
     }
 
