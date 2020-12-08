@@ -25,7 +25,7 @@ public class JdbcUtils {
     public JdbcUtils() {
         try {
             Class.forName(DRIVER);
-            System.out.println("数据库连接成功！");
+
         } catch (Exception e) {
 
         }

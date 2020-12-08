@@ -47,7 +47,7 @@ public class OpenCSVReadBeansEx {
 
     public static void main(String[] args) throws IOException {
         OpenCSVReadBeansEx openCSVReadBeansEx = new OpenCSVReadBeansEx();
-        List<CodeIfo> codeIfoList = openCSVReadBeansEx.readBeans("2020-11-29 17:40:20","2020-12-07 17:02:54", TypeEntity.getCsvPath());
+        List<CodeIfo> codeIfoList = openCSVReadBeansEx.readBeans("2020-10-29 17:40:20","2020-12-09 17:02:54", TypeEntity.getCsvPath());
         System.out.println(codeIfoList.size());
     }
 }

@@ -1,5 +1,6 @@
 package com.tools;
 
+import com.intellij.ui.JBColor;
 import com.regular.CodeInfoAna;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -19,7 +20,7 @@ public class PieChart {
         DefaultPieDataset data = new DefaultPieDataset();
         data.setValue("aiXcoder", codeInfoAna.getAiXcoder_sum());
         data.setValue("IDEA", codeInfoAna.getIDEA_sum());
-        JFreeChart chart = ChartFactory.createPieChart3D(" ", data, true, false, false);
+        JFreeChart chart = ChartFactory.createPieChart3D("成功推荐代码数量占比", data, true, false, false);
         //设置百分比
         PiePlot pieplot = (PiePlot) chart.getPlot();
         DecimalFormat df = new DecimalFormat("0.00%");//获得一个DecimalFormat对象，主要是设置小数问题
@@ -34,11 +35,13 @@ public class PieChart {
 
         pieplot.setIgnoreNullValues(true);//设置不显示空值
         pieplot.setIgnoreZeroValues(true);//设置不显示负值
+        pieplot.setBackgroundPaint(JBColor.white);
+
         frame1 = new ChartPanel(chart, true);
-        chart.getTitle().setFont(new Font("宋体", Font.BOLD, 20));//设置标题字体
+        chart.getTitle().setFont(new Font("宋体", Font.BOLD, 13));//设置标题字体
         PiePlot piePlot = (PiePlot) chart.getPlot();//获取图表区域对象
         piePlot.setLabelFont(new Font("宋体", Font.BOLD, 10));//解决乱码
-        chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 10));
+        chart.getLegend().setItemFont(new Font("宋体", Font.BOLD, 10));
     }
 
 

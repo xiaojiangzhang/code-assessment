@@ -34,6 +34,7 @@ public class ActionMonitor implements AnActionListener {
 
     //    middle
     private long time_of_input;
+
     @Override
     public void beforeActionPerformed(@NotNull AnAction action, @NotNull DataContext dataContext, @NotNull AnActionEvent event) {
         String actionContext = action.getTemplatePresentation().getText();
@@ -44,10 +45,9 @@ public class ActionMonitor implements AnActionListener {
         System.out.println("action描述：" + actionDescription);
         //记录删除代码内容
 //        当前action为删除时,记录删除代码内容，将删除代码内容添加到上一次代码生成记录中
-        if(actionContext.equals("Backspace")){
+        if (actionContext.equals("Backspace")) {
 
-        }
-        else if(actionContext.equals("Choose Lookup Item")){
+        } else if (actionContext.equals("Choose Lookup Item")) {
 
         }
 

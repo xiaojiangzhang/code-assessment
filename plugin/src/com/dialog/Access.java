@@ -12,7 +12,9 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -46,7 +48,6 @@ public class Access extends JDialog {
     private JPanel f2;
     private JPanel f3;
     private JCheckBox generateCodeNumsCheckBox;
-    private JPanel f4;
 
     public Access() {
 //        初始化界面base Panel
@@ -75,8 +76,10 @@ public class Access extends JDialog {
                         f2.removeAll();
                         f3.removeAll();
 //                        读取时间段内数据
-                        OpenCSVReadBeansEx openCSVReadBeansEx = new OpenCSVReadBeansEx();
-                        List<CodeIfo> codeIfoList = openCSVReadBeansEx.readBeans(startTime, endTime, TypeEntity.getCsvPath());
+//                        OpenCSVReadBeansEx openCSVReadBeansEx = new OpenCSVReadBeansEx();
+//                        List<CodeIfo> codeIfoList = openCSVReadBeansEx.readBeans(startTime, endTime, TypeEntity.getCsvPath());
+                        List<CodeIfo> codeIfoList = CodeGenerateRecord.getRecordFromStartEndTime(startTime, endTime);
+
 //                        计算各项指标
                         CodeInfoAna codeInfoAna = new CodeInfoAna(codeIfoList);
                         codeInfoAna.initAna();
@@ -101,6 +104,15 @@ public class Access extends JDialog {
                             f1.setLayout(new GridLayout(1, 1, 5, 5));
                             f1.add(new BarChart(defaultCategoryDataset).getChartPanel());
                         }
+
+
+//                        String data = null;
+//                        try {
+//                            data = ModelRequestHttp.sendGut("http://127.0.0.1/tbcnn_param?s=" + startTime.replace(" ", "%") + "&e=" + endTime.replace(" ", "%"), null, null);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                        String[] value = data.substring(1, data.length() - 1).split(",");
                         //        初始化代码质量属性表格数据
                         _initQualityTableData(defaultQualityTableModel, new String[]{"1", "2", "3", "4", "5"});
                         //        初始化代码质量属性表格控件
@@ -141,6 +153,7 @@ public class Access extends JDialog {
     private void _initQualityTable(DefaultTableModel defaultTableModel) {
         table1 = new JTable(defaultTableModel);
         table1.setRowHeight(25);
+        table1.setEnabled(false);
         setTableColumnCenter(table1);
         qualityPanel.setLayout(new GridLayout(1, 1, 5, 5));
         qualityPanel.add(table1);
@@ -154,6 +167,7 @@ public class Access extends JDialog {
     private void _initEffecTable(DefaultTableModel defaultTableModel) {
         table2 = new JTable(defaultTableModel);
         table2.setRowHeight(25);
+        table2.setEnabled(false);
         setTableColumnCenter(table2);
         effectPanel.setLayout(new GridLayout(1, 1, 5, 5));
         effectPanel.add(table2);

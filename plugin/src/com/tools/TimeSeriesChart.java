@@ -1,6 +1,7 @@
 package com.tools;
 
 import com.bean.CodeIfo;
+import com.intellij.ui.JBColor;
 import com.regular.CodeInfoAna;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -41,16 +42,18 @@ public class TimeSeriesChart {
             linedataset.addValue(Integer.valueOf(codeIfo.getIDEAcode_num()), series2, String.valueOf(i));
         }
 
-        JFreeChart jfreechart = ChartFactory.createLineChart("生成代码个数", "time", "times", linedataset, PlotOrientation.VERTICAL, true, true, true);
-        Font titleFont=new Font("黑体", Font.ITALIC, 13);
-        Font font=new Font("黑体",Font.BOLD,12);
-        Font legendFont=new Font("黑体", Font.BOLD, 15);
+        JFreeChart jfreechart = ChartFactory.createLineChart("生成代码个数", "time", "time", linedataset, PlotOrientation.VERTICAL, true, true, true);
+
+        Font titleFont=new Font("宋体", Font.ITALIC, 13);
+        Font font=new Font("宋体",Font.BOLD,10);
+        Font legendFont=new Font("宋体", Font.BOLD, 10);
 
         jfreechart.getTitle().setFont(titleFont);
         jfreechart.getLegend().setItemFont(legendFont);
 
         frame1 = new ChartPanel(jfreechart, true);
         CategoryPlot plot = jfreechart.getCategoryPlot();
+//        plot.setBackgroundPaint(JBColor.black);
         NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
         rangeAxis.setAutoRangeIncludesZero(true);

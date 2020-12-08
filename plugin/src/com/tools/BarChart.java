@@ -1,6 +1,7 @@
 package com.tools;
 
 import com.dialog.Access;
+import com.intellij.ui.JBColor;
 import com.regular.CodeInfoAna;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -29,16 +30,16 @@ public class BarChart {
                 false,          // 是否生成工具
                 false           // 是否生成URL链接
         );
-
         //从这里开始
         CategoryPlot plot = chart.getCategoryPlot();//获取图表区域对象
+//        plot.setBackgroundPaint(JBColor.white);
         CategoryAxis domainAxis = plot.getDomainAxis();         //水平底部列表
-        domainAxis.setLabelFont(new Font("黑体", Font.BOLD, 14));         //水平底部标题
-        domainAxis.setTickLabelFont(new Font("宋体", Font.BOLD, 12));  //垂直标题
+        domainAxis.setLabelFont(new Font("宋体", Font.BOLD, 10));         //水平底部标题
+        domainAxis.setTickLabelFont(new Font("宋体", Font.BOLD, 10));  //垂直标题
         ValueAxis rangeAxis = plot.getRangeAxis();//获取柱状
-        rangeAxis.setLabelFont(new Font("黑体", Font.BOLD, 15));
-        chart.getLegend().setItemFont(new Font("黑体", Font.BOLD, 15));
-        chart.getTitle().setFont(new Font("宋体", Font.BOLD, 20));//设置标题字体
+        rangeAxis.setLabelFont(new Font("宋体", Font.BOLD, 10));
+        chart.getLegend().setItemFont(new Font("宋体", Font.BOLD, 10));
+        chart.getTitle().setFont(new Font("宋体", Font.BOLD, 13));//设置标题字体
 
         //到这里结束，虽然代码有点多，但只为一个目的，解决汉字乱码问题
 

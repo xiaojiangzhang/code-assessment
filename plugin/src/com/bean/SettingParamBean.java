@@ -1,6 +1,7 @@
 package com.bean;
 
 public class SettingParamBean {
+    private String dbName = "jicheng";
     private String user = "root";
     private String password = "xiaojiangzhang";
     private String dburl = "jdbc:mysql://47.101.184.222:3306/SampleJavaCode?characterEncoding=UTF-8";

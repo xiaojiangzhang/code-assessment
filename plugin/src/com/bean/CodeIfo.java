@@ -2,74 +2,96 @@ package com.bean;
 
 import com.opencsv.bean.CsvBindByName;
 
-import java.util.ArrayList;
 
 public class CodeIfo {
-    @CsvBindByName
+    private String id;
     private String time;
-    @CsvBindByName
     private String dataContext;
-    @CsvBindByName
     private String codeContext;
-    @CsvBindByName
     private String caretOffset;
-    @CsvBindByName
     private String coder_input;
-    @CsvBindByName
     private String coder_select;
-    @CsvBindByName
     private int select_num = 1;
-    @CsvBindByName
     private String code_from;
-    @CsvBindByName
     private String IDEAcode;
-    @CsvBindByName
     private String IDEAcode_num;
-    @CsvBindByName
     private String IDEAcode_index;
-    @CsvBindByName
     private String AiXcode;
-    @CsvBindByName
     private String AiXcode_num;
-    @CsvBindByName
     private String AiXcoder_index;
-    @CsvBindByName
     private String KiteCode;
-    @CsvBindByName
     private String Kitecode_num;
-    @CsvBindByName
     private String Kitecode_index;
-    @CsvBindByName
     private String time_input_to_show;
-    @CsvBindByName
     private String time_of_select_code;
-    @CsvBindByName
     private String delete_behavior;
+//    private String action1;
+//    private String action2;
+//    private String action3;
+//    private String action4;
+//    private String action5;
+//    private String action6;
+//    private String action7;
+//    private String action8;
+//    private String action9;
+//    private String action10;
+//    private String action11;
+//    private String action12;
+//    private String action13;
+//    private String action14;
+//    private String action15;
+//    private String action16;
+//    private String action17;
+//    private String action18;
+//    private String action19;
+//    private String action20;
+//    private String action21;
+//    private String action22;
+//    private String action23;
+//    private String action24;
+//    private String action25;
+//    private String action26;
+//    private String action27;
+//    private String action28;
+//    private String action29;
+//    private String action30;
+//    private String action31;
+//    private String action32;
+//    private String action33;
+//    private String action34;
+//    private String action35;
+//    private String action36;
+//    private String action37;
+//    private String action38;
+//    private String action39;
+//    private String action40;
+//    private String action41;
+//    private String action42;
+//    private String action43;
+//    private String action44;
+//    private String action45;
+//    private String action46;
+//    private String action47;
+//    private String action48;
+//    private String action49;
+//    private String action50;
+//    private String action51;
+//    private String action52;
+//    private String action53;
+//    private String action54;
+//    private String action55;
+//    private String action56;
+//    private String action57;
+//    private String action58;
+//    private String action59;
+//    private String action60;
 
-    @Override
-    public String toString() {
-        return "CoderData{" +
-                "time='" + time + '\'' +
-                ", dataContext='" + dataContext + '\'' +
-                ", codeContext='" + codeContext + '\'' +
-                ", caretOffset='" + caretOffset + '\'' +
-                ", coder_input='" + coder_input + '\'' +
-                ", coder_select='" + coder_select + '\'' +
-                ", select_num='" + select_num + '\'' +
-                ", code_from='" + code_from + '\'' +
-                ", IDEAcode='" + IDEAcode + '\'' +
-                ", IDEAcode_num='" + IDEAcode_num + '\'' +
-                ", IDEAcode_index='" + IDEAcode_index + '\'' +
-                ", AiXcode='" + AiXcode + '\'' +
-                ", AiXcode_num='" + AiXcode_num + '\'' +
-                ", AiXcoder_index='" + AiXcoder_index + '\'' +
-                ", KiteCode='" + KiteCode + '\'' +
-                ", Kitecode_num='" + Kitecode_num + '\'' +
-                ", Kitecode_index='" + Kitecode_index + '\'' +
-                ", time_input_to_show='" + time_input_to_show + '\'' +
-                ", time_of_select_code='" + time_of_select_code + '\'' +
-                ", delete_behavior='" + delete_behavior + '\'' +
-                '}';
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTime() {
@@ -231,4 +253,5 @@ public class CodeIfo {
     public void setDelete_behavior(String delete_behavior) {
         this.delete_behavior = delete_behavior;
     }
+
 }
