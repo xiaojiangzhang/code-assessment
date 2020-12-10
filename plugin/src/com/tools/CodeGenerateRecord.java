@@ -31,7 +31,7 @@ public class CodeGenerateRecord {
     public static List<CodeIfo> getRecordFromStartEndTime(String startTime, String endTime) {
         JdbcUtils jdbcUtils = new JdbcUtils();
         jdbcUtils.getConnection();
-        String sql2 = "select * from data where time>='" + startTime + "'and time <= '" + endTime + "'";
+        String sql2 = "select * from "+TypeEntity.getTableName()+" where time>='" + startTime + "'and time <= '" + endTime + "'";
         List<Map<String, Object>> list = null;
         try {
             list = jdbcUtils.findModeResult(sql2, null);

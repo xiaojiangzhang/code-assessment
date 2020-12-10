@@ -43,12 +43,13 @@
         <!--    <add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>-->
         <!--    <keyboard-shortcut keymap="$default" first-keystroke="ctrl R"/>-->
         <!--    </action>-->
-        <action id="Analysis result" class="com.coderPlugin.DataAnalysisAction" text="Assess"
+        <action id="Efficiency Evaluation" class="com.coderPlugin.EfficiencyEvaAction" text="Efficiency Evaluation"
                 description="Analysis Data from coder">
             <add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl Q"/>
         </action>
-        <action id="access" class="com.coderPlugin.AccessAction" text="Access" description="Access">
+        <action id="Quality Evaluation" class="com.coderPlugin.QualityEvalAction" text="Quality Evaluation"
+                description="Quality Evaluation">
             <add-to-group group-id="CodeMenu" anchor="first"/>
         </action>
     </actions>

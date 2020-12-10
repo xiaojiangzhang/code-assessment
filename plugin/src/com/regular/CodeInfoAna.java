@@ -17,14 +17,14 @@ public class CodeInfoAna {
     private String IDEAcode = "";//IDEA生成代码
     private int IDEAfullLine_num = 0;//整行代码补全次数
     private int IDEAmultiLine_num = 0;
-    private String IDEAcodeSize;
+    private long IDEAcodeSize;
     private float AiXcoder_select_sum = 0;//AiXcoder正确推荐项完成键数
     private int AiXcoder_sum = 0;//AiXcoder正确推荐次数
     private float AiXcoder_listsize = 0;//AiXcoder推荐列表长度
     private String AiXcode = "";//AiXcoder生成代码
     private int AiXcoderfullLine_num = 0;
     private int AiXcodermultLine_num = 0;
-    private String AiXcodeSize;
+    private long AiXcodeSize;
 
     private int i = 0;
 
@@ -71,10 +71,10 @@ public class CodeInfoAna {
 
     }
 
-    public String getPrintSize(long size) {
+    public long getPrintSize(long size) {
         //如果字节数少于1024，则直接以B为单位，否则先除于1024，后3位因太少无意义
         if (size < 1024) {
-            return String.valueOf(size) + "B";
+            return size;
         } else {
             size = size / 1024;
         }
@@ -82,7 +82,7 @@ public class CodeInfoAna {
         //因为还没有到达要使用另一个单位的时候
         //接下去以此类推
         if (size < 1024) {
-            return String.valueOf(size) + "KB";
+            return size;
         } else {
             size = size / 1024;
         }
@@ -90,13 +90,11 @@ public class CodeInfoAna {
             //因为如果以MB为单位的话，要保留最后1位小数，
             //因此，把此数乘以100之后再取余
             size = size * 100;
-            return String.valueOf((size / 100)) + "."
-                    + String.valueOf((size % 100)) + "MB";
+            return size;
         } else {
             //否则如果要以GB为单位的，先除于1024再作同样的处理
             size = size * 100 / 1024;
-            return String.valueOf((size / 100)) + "."
-                    + String.valueOf((size % 100)) + "GB";
+            return size;
         }
     }
 
@@ -136,7 +134,7 @@ public class CodeInfoAna {
         return IDEAmultiLine_num;
     }
 
-    public String getIDEAcodeSize() {
+    public long getIDEAcodeSize() {
         return IDEAcodeSize;
     }
 
@@ -164,7 +162,7 @@ public class CodeInfoAna {
         return AiXcodermultLine_num;
     }
 
-    public String getAiXcodeSize() {
+    public long getAiXcodeSize() {
         return AiXcodeSize;
     }
 

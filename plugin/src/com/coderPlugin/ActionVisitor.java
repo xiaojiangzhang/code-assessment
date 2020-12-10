@@ -53,7 +53,7 @@ public class ActionVisitor implements AnActionListener {
     private int deleteStartOofset = 0;
     private List<String> actionType = new ArrayList<String>();
     private LookupImpl lookup;
-    private JdbcUtils jdbcUtils;
+    private JdbcUtils jdbcUtils = new JdbcUtils();
 
 
     @Override
@@ -78,15 +78,18 @@ public class ActionVisitor implements AnActionListener {
             System.out.println(e);
         }
         //选择代码操作
-        if (actionContext.equals("Choose Lookup Item")) {
+        if (actionContext.equals("Choose Lookup Item") || actionContext.equals("Choose Lookup Item Replace")) {
             LookupManager lookupManager = LookupManager.getInstance(event.getProject());
             lookup = (LookupImpl) lookupManager.getActiveLookup();
             if (lookup != null) {
                 offset = String.valueOf(lookup.getEditor().getCaretModel().getOffset());
                 codeContext = lookup.getEditor().getDocument().getText();
-                new Thread(new Runnable() {
+                System.out.println("!!!!!!!!!!!!!准备处理并存储数据！！！！！！！！！！！！！！！！");
+                MyThreadPool.getExecutorService().execute(new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        System.out.println("------------------！！！！！！——————————————————————子线开始程存储数据");
+
                         if (time_of_codelist == 0) {
                             time_of_codelist = System.currentTimeMillis();
                         }
@@ -105,129 +108,129 @@ public class ActionVisitor implements AnActionListener {
                         } catch (Exception ex) {
                             System.out.println(ex);
                         }
-                        if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab"))) {
-                            System.out.println("lookup长度：" + lookup.getList().getModel().getSize());
-                            time_of_select = System.currentTimeMillis();
-                            for (int i = 0; i < len; i++) {
-
-                                try {
-                                    classify = new Classify(list.getModel().getElementAt(i));
-                                    classify.sorting();
-                                } catch (Exception e) {
+//                        if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab"))) {
+                        System.out.println("lookup长度：" + lookup.getList().getModel().getSize());
+                        time_of_select = System.currentTimeMillis();
+                        System.out.println("开始对推荐列表代码进行分类");
+                        for (int i = 0; i < len; i++) {
+                            try {
+                                classify = new Classify(list.getModel().getElementAt(i));
+                                classify.sorting();
+                            } catch (Exception e) {
+                            }
+                            if (i == 0 || classify.getAiXcoder() != null) {
+                                //将第一条记录添加到aixcoder中
+                                AiXcode.add(LookupElementPresentation.renderElement(list.getModel().getElementAt(i)).getItemText());
+                                if (codeIfo.getSelect_num() - 1 == i) {
+                                    codeIfo.setCode_from("AiXcoder");
                                 }
-                                if (i == 0 || classify.getAiXcoder() != null) {
-//                                    将第一条记录添加到aixcoder中
-                                    AiXcode.add(LookupElementPresentation.renderElement(list.getModel().getElementAt(i)).getItemText());
-
-                                    if (codeIfo.getSelect_num() - 1 == i) {
-                                        codeIfo.setCode_from("AiXcoder");
-                                    }
-                                    AiXcoderCodeIndex.add(i);
+                                AiXcoderCodeIndex.add(i);
+                            }
+                            if ((classify.getIDEAcode() != null) && !classify.getIDEAcode().equals("             ")) {
+                                IDEcodea.add(classify.getIDEAcode());
+                                if (codeIfo.getSelect_num() - 1 == i) {
+                                    codeIfo.setCode_from("IDEA");
                                 }
-                                if ((classify.getIDEAcode() != null) && !classify.getIDEAcode().equals("             ")) {
-                                    IDEcodea.add(classify.getIDEAcode());
-                                    if (codeIfo.getSelect_num() - 1 == i) {
-                                        codeIfo.setCode_from("IDEA");
-                                    }
-                                    IDEACodeIndex.add(i);
-                                }
+                                IDEACodeIndex.add(i);
                             }
                         }
-                        if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab")) && list != null) {
-                            //数据存入本地
-                            SimpleDateFormat tf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+//                        }
+//                        if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab")) && list != null) {
+                        //数据存入本地
+                        SimpleDateFormat tf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+
+
+                        System.out.println("数据开始入库！！！！！！！！！！！！！！！");
+                        String sql = "insert into "+TypeEntity.getTableName()+" (time, dataContext,codeContext,caretOffset,coder_input,coder_select,select_num,code_from,IDEAcode," +
+                                "IDEAcode_num,IDEAcode_index,AiXcode,AiXcode_num,AiXcoder_index,KiteCode,Kitecode_num,Kitecode_index," +
+                                "time_input_to_show,time_of_select_code,delete_behavior) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                        List<Object> params = new ArrayList<>();
+                        params.add(tf.format(new Date()));
+                        params.add(dataContext.toString());
+                        params.add(codeContext);
+                        params.add(offset);
+                        params.add(input);
+                        params.add(selectvalue);
+                        params.add(codeIfo.getSelect_num());
+                        params.add(codeIfo.getCode_from());
+                        params.add(IDEcodea.toString());
+                        params.add(IDEcodea.size());
+                        params.add(IDEACodeIndex.toString());
+                        params.add(AiXcode.toString());
+                        params.add(AiXcode.size());
+                        params.add(AiXcoderCodeIndex.toString());
+                        params.add(Kitecode.toString());
+                        params.add(Kitecode.size());
+                        params.add(KiteCodeIndex.toString());
+                        params.add(Math.abs(time_of_codelist - time_of_input));
+                        params.add(Math.abs(time_of_select - time_of_input));
+                        params.add(deleteCode);
+
+//                        String[] line = {tf.format(new Date()),
+//                                dataContext.toString(),
+//                                codeContext,
+//                                offset,
+//                                input,
+//                                selectvalue,
+//                                Integer.toString(codeIfo.getSelect_num()),
+//                                codeIfo.getCode_from(),
+//                                IDEcodea.toString(),
+//                                Integer.toString(IDEcodea.size()),
+//                                IDEACodeIndex.toString(),
+//                                AiXcode.toString(),
+//                                Integer.toString(AiXcode.size()),
+//                                AiXcoderCodeIndex.toString(),
+//                                Kitecode.toString(),
+//                                Integer.toString(Kitecode.size()),
+//                                KiteCodeIndex.toString(), Long.toString(Math.abs(time_of_codelist - time_of_input)), Long.toString(Math.abs(time_of_select - time_of_input)), deleteCode};
+//                        try {
+//                            CSVWriter writer = new CSVWriter(new FileWriter(TypeEntity.getCsvPath(), true));
+//                            writer.writeNext(line);
+//                            writer.close();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+
+                        try {
+                            jdbcUtils.getConnection();
+                            boolean flag = jdbcUtils.updateByPreparedStatement(sql, params);
+                            System.out.println(flag + "写入成功");
+                        } catch (Exception e) {
+                            // TODO Auto-generated catch block
+                            System.out.println("写入失败，请检查连接");
+                            e.printStackTrace();
+                            Messages.showMessageDialog("数据采集上传失败，请检查数据库配置或检查网络！", "Faile！", Messages.getInformationIcon());
+                        }
+                        IDEcodea.clear();
+                        AiXcode.clear();
+                        Kitecode.clear();
+                        deleteCode = "";
+                        input = "";
+                        codeIfo.setCode_from("");
+                        time_of_codelist = 0;
+                        codeIfo.setSelect_num(1);
+                        IDEACodeIndex.clear();
+                        AiXcoderCodeIndex.clear();
+                        KiteCodeIndex.clear();
+                        String sqlStr = "";
+                        try {
+                            for (int i = 0; i < actionType.size(); i++) {
+                                sqlStr += "action" + (i + 1) + "='" + actionType.get(i) + "',";
+                            }
+                            sqlStr = sqlStr.substring(0, sqlStr.length() - 1);
                             jdbcUtils = new JdbcUtils();
                             jdbcUtils.getConnection();
-                            System.out.println("数据开始入库！！！！！！！！！！！！！！！");
-                            String sql = "insert into data (time, dataContext,codeContext,caretOffset,coder_input,coder_select,select_num,code_from,IDEAcode," +
-                                    "IDEAcode_num,IDEAcode_index,AiXcode,AiXcode_num,AiXcoder_index,KiteCode,Kitecode_num,Kitecode_index," +
-                                    "time_input_to_show,time_of_select_code,delete_behavior) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-                            List<Object> params = new ArrayList<>();
-                            params.add(tf.format(new Date()));
-                            params.add(dataContext.toString());
-                            params.add(codeContext);
-                            params.add(offset);
-                            params.add(input);
-                            params.add(selectvalue);
-                            params.add(codeIfo.getSelect_num());
-                            params.add(codeIfo.getCode_from());
-                            params.add(IDEcodea.toString());
-                            params.add(IDEcodea.size());
-                            params.add(IDEACodeIndex.toString());
-                            params.add(AiXcode.toString());
-                            params.add(AiXcode.size());
-                            params.add(AiXcoderCodeIndex.toString());
-                            params.add(Kitecode.toString());
-                            params.add(Kitecode.size());
-                            params.add(KiteCodeIndex.toString());
-                            params.add(Math.abs(time_of_codelist - time_of_input));
-                            params.add(Math.abs(time_of_select - time_of_input));
-                            params.add(deleteCode);
-
-                            String[] line = {tf.format(new Date()),
-                                    dataContext.toString(),
-                                    codeContext,
-                                    offset,
-                                    input,
-                                    selectvalue,
-                                    Integer.toString(codeIfo.getSelect_num()),
-                                    codeIfo.getCode_from(),
-                                    IDEcodea.toString(),
-                                    Integer.toString(IDEcodea.size()),
-                                    IDEACodeIndex.toString(),
-                                    AiXcode.toString(),
-                                    Integer.toString(AiXcode.size()),
-                                    AiXcoderCodeIndex.toString(),
-                                    Kitecode.toString(),
-                                    Integer.toString(Kitecode.size()),
-                                    KiteCodeIndex.toString(), Long.toString(Math.abs(time_of_codelist - time_of_input)), Long.toString(Math.abs(time_of_select - time_of_input)), deleteCode};
-                            try {
-                                CSVWriter writer = new CSVWriter(new FileWriter(TypeEntity.getCsvPath(), true));
-                                writer.writeNext(line);
-                                writer.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-                            try {
-                                boolean flag = jdbcUtils.updateByPreparedStatement(sql, params);
-                                System.out.println(flag + "写入成功");
-                            } catch (Exception e) {
-                                // TODO Auto-generated catch block
-                                System.out.println("写入失败，请检查连接");
-                                e.printStackTrace();
-                                Messages.showMessageDialog("数据采集上传失败，请检查数据库配置或检查网络！", "Faile！", Messages.getInformationIcon());
-                            }
-                            IDEcodea.clear();
-                            AiXcode.clear();
-                            Kitecode.clear();
-                            deleteCode = "";
-                            input = "";
-                            codeIfo.setCode_from("");
-                            time_of_codelist = 0;
-                            codeIfo.setSelect_num(1);
-                            IDEACodeIndex.clear();
-                            AiXcoderCodeIndex.clear();
-                            KiteCodeIndex.clear();
-                            String sqlStr = "";
-                            try {
-                                for (int i = 0; i < actionType.size(); i++) {
-                                    sqlStr += "action" + (i + 1) + "='" + actionType.get(i) + "',";
-                                }
-                                sqlStr = sqlStr.substring(0, sqlStr.length() - 1);
-                                jdbcUtils = new JdbcUtils();
-                                jdbcUtils.getConnection();
-                                sql = "UPDATE " + "jicheng" + " SET " + sqlStr + " ORDER BY time DESC LIMIT 1";
-                                boolean flag = jdbcUtils.executeQuery(sql);
-                                System.out.println(flag + "action数据写入成功");
-                                actionType.clear();
-                            } catch (SQLException e) {
-                                Messages.showMessageDialog("数据采集上传失败，请检查数据库配置或检查网络！", "Faile！", Messages.getInformationIcon());
-                                e.printStackTrace();
-                            }
+                            sql = "UPDATE " +TypeEntity.getTableName()+ " SET " + sqlStr + " ORDER BY time DESC LIMIT 1";
+                            boolean flag = jdbcUtils.executeQuery(sql);
+                            System.out.println(flag + "action数据写入成功");
+                            actionType.clear();
+                        } catch (SQLException e) {
+//                            Messages.showMessageDialog("数据采集上传失败，请检查数据库配置或检查网络！", "Faile！", Messages.getInformationIcon());
+                            e.printStackTrace();
                         }
                     }
-                }).start();
+                }));
+
             }
         }
 

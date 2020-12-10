@@ -7,12 +7,20 @@ public class TypeEntity {
     private static String csvPath = "C:\\Users\\xiaojiangzhang\\data.csv";
     private static String user = "root";
     private static String password = "xiaojiangzhang";
-    private static String dburl = "jdbc:mysql://47.101.184.222:3306/SamplePythonCode?characterEncoding=UTF-8";
+    private static String dburl = "jdbc:mysql://47.101.184.222:3306/API4Record?characterEncoding=UTF-8&useSSL=false";
     private static String driver = "com.mysql.jdbc.Driver";
-    private static String dbName = "";
+    private static String tableName = "";
     private static String tool1 = "IDEA";
     private static String tool2 = "Aixcoder";
     private static String tool3 = "Kite";
+
+    public static String getTableName() {
+        return tableName;
+    }
+
+    public static void setTableName(String tableName) {
+        TypeEntity.tableName = tableName;
+    }
 
     public static String getCsvPath() {
         return csvPath;
@@ -22,13 +30,6 @@ public class TypeEntity {
         TypeEntity.csvPath = csvPath;
     }
 
-    public static String getDbName() {
-        return dbName;
-    }
-
-    public static void setDbName(String dbName) {
-        TypeEntity.dbName = dbName;
-    }
 
     private static String tool1key = "jetbrains";
     private static String tool2key = "aiXcoder";
