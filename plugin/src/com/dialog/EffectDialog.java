@@ -122,7 +122,7 @@ public class EffectDialog extends JDialog {
                                 String data = null;
                                 try {
                                     data = ModelRequestHttp.sendGut("http://47.101.184.222/effect?s=" + startTime.replace(" ", "%") +
-                                            "&e=" + endTime.replace(" ", "%" + "&t=" + TypeEntity.getTableName()), null, null);
+                                            "&e=" + endTime.replace(" ", "%" )+ "&t=" + TypeEntity.getTableName(), null, null);
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }

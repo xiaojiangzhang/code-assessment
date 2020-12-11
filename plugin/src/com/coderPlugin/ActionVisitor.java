@@ -14,7 +14,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.ex.AnActionListener;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.ui.Messages;
-import com.opencsv.CSVWriter;
 import com.regular.Classify;
 import org.jetbrains.annotations.NotNull;
 

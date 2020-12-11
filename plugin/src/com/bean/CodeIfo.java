@@ -1,6 +1,5 @@
 package com.bean;
 
-import com.opencsv.bean.CsvBindByName;
 
 
 public class CodeIfo {
