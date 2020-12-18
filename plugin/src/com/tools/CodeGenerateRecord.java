@@ -1,7 +1,7 @@
 package com.tools;
 
 import ConfigPara.TypeEntity;
-import android.content.pm.UserInfo;
+//import android.content.pm.UserInfo;
 import com.bean.CodeIfo;
 import com.db.JdbcUtils;
 import org.apache.commons.beanutils.BeanUtils;
@@ -31,7 +31,7 @@ public class CodeGenerateRecord {
     public static List<CodeIfo> getRecordFromStartEndTime(String startTime, String endTime) {
         JdbcUtils jdbcUtils = new JdbcUtils();
         jdbcUtils.getConnection();
-        String sql2 = "select * from "+TypeEntity.getTableName()+" where time>='" + startTime + "'and time <= '" + endTime + "'";
+        String sql2 = "select * from "+TypeEntity.getTableName()+" where time >= '" + startTime + "' and time <= '" + endTime + "'";
         List<Map<String, Object>> list = null;
         try {
             list = jdbcUtils.findModeResult(sql2, null);
@@ -67,6 +67,7 @@ public class CodeGenerateRecord {
             codeIfo.setTime_of_select_code(list.get(i).get("time_of_select_code").toString());
             codeIfo.setTime_of_select_code(list.get(i).get("time_of_select_code").toString());
             codeIfoArrayList.add(codeIfo);
+            jdbcUtils.connClose();
         }
         return codeIfoArrayList;
     }

@@ -39,9 +39,7 @@ public class CodeInfoAna {
             if (codeIfoList.get(i).getCode_from().contains("IDEA")) {
                 IDEA_sum += 1;
                 IDEA_select_sum += codeIfoList.get(i).getSelect_num();
-
                 IDEA_key_nums.add(codeIfoList.get(i).getSelect_num());
-
 
                 if (codeIfoList.get(i).getCoder_select().contains(")") || codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
                     IDEAfullLine_num++;
@@ -51,7 +49,6 @@ public class CodeInfoAna {
                 AiXcoder_sum += 1;
                 AiXcoder_select_sum += codeIfoList.get(i).getSelect_num();
                 aiXcode_key_nums.add(codeIfoList.get(i).getSelect_num());
-
 
                 if (codeIfoList.get(i).getCoder_select().contains(")") || codeIfoList.get(i).getCoder_select().contains("}") || codeIfoList.get(i).getCoder_select().contains("\n")) {
                     AiXcoderfullLine_num++;
@@ -72,30 +69,32 @@ public class CodeInfoAna {
     }
 
     public long getPrintSize(long size) {
+//        直接以kb为单位返回
+        return size / 1024;
         //如果字节数少于1024，则直接以B为单位，否则先除于1024，后3位因太少无意义
-        if (size < 1024) {
-            return size;
-        } else {
-            size = size / 1024;
-        }
-        //如果原字节数除于1024之后，少于1024，则可以直接以KB作为单位
-        //因为还没有到达要使用另一个单位的时候
-        //接下去以此类推
-        if (size < 1024) {
-            return size;
-        } else {
-            size = size / 1024;
-        }
-        if (size < 1024) {
-            //因为如果以MB为单位的话，要保留最后1位小数，
-            //因此，把此数乘以100之后再取余
-            size = size * 100;
-            return size;
-        } else {
-            //否则如果要以GB为单位的，先除于1024再作同样的处理
-            size = size * 100 / 1024;
-            return size;
-        }
+//        if (size < 1024) {
+//            return size;
+//        } else {
+//            size = size / 1024;
+//        }
+//        //如果原字节数除于1024之后，少于1024，则可以直接以KB作为单位
+//        //因为还没有到达要使用另一个单位的时候
+//        //接下去以此类推
+//        if (size < 1024) {
+//            return size;
+//        } else {
+//            size = size / 1024;
+//        }
+//        if (size < 1024) {
+//            //因为如果以MB为单位的话，要保留最后1位小数，
+//            //因此，把此数乘以100之后再取余
+//            size = size * 100;
+//            return size;
+//        } else {
+//            //否则如果要以GB为单位的，先除于1024再作同样的处理
+//            size = size * 100 / 1024;
+//            return size;
+//        }
     }
 
     public List<CodeIfo> getCodeIfoList() {

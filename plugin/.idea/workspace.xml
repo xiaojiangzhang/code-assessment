@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="添加图表access action , 保存record数据到用户路径">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_collections4_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_collections_3_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_dbcp2_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_dbcp2_2_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javacsv_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/opencsv_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/plugin_rapidly_0_5_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coder_Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Coder_Plugin.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javacsv-2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/opencsv-4.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/CodeIfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/bean/CodeIfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/ActionVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dvop/csv/DvoCSV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/OpenCSVReadBeansEx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bean/CodeIfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/CodeIfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dialog/EffectDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/EffectDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dvop/csv/DvoCSV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tools/OpenCSVReadBeansEx.java" beforeDir="false" />
-    </list>
+    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="添加图表access action , 保存record数据到用户路径" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,12 +28,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -80,23 +46,27 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="223" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="258" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -107,15 +77,16 @@
       <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tools" />
       <recent name="com.coderPlugin" />
       <recent name="com.listen" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\com" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\lib" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\chart" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src" />
       <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
-      <recent name="C:\Users\86151\Desktop\sffsd\Coder_Plugin\lib" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src\com\listen" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,7 +102,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Plugin.Plugin">
-    <configuration name="Access (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Access" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dialog.Access" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
@@ -157,8 +128,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetMacAdd" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tools.GetMacAdd" />
+    <configuration name="LineChart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chart.LineChart" />
+      <module name="Coder_Plugin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="chart.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Time" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tools.Time" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
@@ -170,21 +154,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JdbcUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.db.JdbcUtils" />
-      <module name="Coder_Plugin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.coderPlugin.Test" />
+    <configuration name="Time1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tools.Time1" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
@@ -200,7 +171,7 @@
       <module name="Coder_Plugin" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <alternative-path path="C:/Program Files/JetBrains/PyCharm Community Edition 2019.1" alternative-path-enabled="true" />
+      <alternative-path path="C:/Program Files/JetBrains/PyCharm Community Edition 2019.1" alternative-path-enabled="false" />
       <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -216,20 +187,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Access (1)" />
-      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Time" />
       <item itemvalue="Application.EffectDialog" />
-      <item itemvalue="Application.GetMacAdd" />
-      <item itemvalue="Application.JdbcUtils" />
+      <item itemvalue="Application.Time1" />
       <item itemvalue="Plugin.Plugin" />
+      <item itemvalue="Application.Access" />
+      <item itemvalue="Application.LineChart" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GetMacAdd" />
-        <item itemvalue="Application.JdbcUtils" />
-        <item itemvalue="Application.Access (1)" />
+        <item itemvalue="Application.Access" />
+        <item itemvalue="Application.LineChart" />
         <item itemvalue="Application.EffectDialog" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Time1" />
+        <item itemvalue="Application.Time" />
       </list>
     </recent_temporary>
   </component>
@@ -312,6 +283,17 @@
       <workItem from="1584802389884" duration="520000" />
       <workItem from="1584802964723" duration="293000" />
       <workItem from="1585737971862" duration="12000" />
+      <workItem from="1607674997426" duration="14427000" />
+      <workItem from="1607693141292" duration="5338000" />
+      <workItem from="1607734610652" duration="207000" />
+      <workItem from="1607768460136" duration="2039000" />
+      <workItem from="1607828410461" duration="923000" />
+      <workItem from="1607847231092" duration="311000" />
+      <workItem from="1607931842732" duration="245000" />
+      <workItem from="1607932745717" duration="4889000" />
+      <workItem from="1607945526560" duration="236000" />
+      <workItem from="1607948880595" duration="240000" />
+      <workItem from="1607949204511" duration="1961000" />
     </task>
     <task id="LOCAL-00001" summary="添加界面、保存csv">
       <created>1606572278200</created>
@@ -337,9 +319,6 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398592000" />
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -350,7 +329,7 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -384,6 +363,103 @@
     <MESSAGE value="添加界面、保存csv" />
     <MESSAGE value="添加图表access action , 保存record数据到用户路径" />
     <option name="LAST_COMMIT_MESSAGE" value="添加图表access action , 保存record数据到用户路径" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607675436045">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607675436045" />
+    <state x="599" y="123" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1607675079537">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="599" y="123" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1536.824@0.0.1536.824" timestamp="1607675079537" />
+    <state x="748" y="140" key="FileChooserDialogImpl" timestamp="1607694126539">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="748" y="140" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607694126539" />
+    <state width="1492" height="293" key="GridCell.Tab.0.bottom" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.0.center" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.0.left" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.0.right" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.1.bottom" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.1.center" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.1.left" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="293" key="GridCell.Tab.1.right" timestamp="1607950202015">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="293" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state x="429" y="127" key="GuiDesigner.FormSource.Dialog" timestamp="1607676548167">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="429" y="127" key="GuiDesigner.FormSource.Dialog/0.0.1536.824@0.0.1536.824" timestamp="1607676548167" />
+    <state x="349" y="146" key="IDE.errors.dialog" timestamp="1607937665688">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="146" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1607937665688" />
+    <state x="353" y="0" key="SettingsEditor" timestamp="1607936544945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="353" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607936544945" />
+    <state x="467" y="10" width="602" height="804" key="find.popup" timestamp="1607935733469">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="467" y="10" width="602" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1607935733469" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607935191147">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607935191147" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/tools/Time1.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

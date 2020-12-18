@@ -18,7 +18,6 @@ import com.regular.Classify;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.io.*;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -64,7 +63,7 @@ public class ActionVisitor implements AnActionListener {
         System.out.println("action作用域：" + actionPlace);
         System.out.println("action描述：" + actionDescription);
         if (actionType.size() < 60) {
-            actionType.add(actionContext + "%" + actionPlace);
+            actionType.add(actionContext + "  " + actionPlace);
         }
         try {
             Editor editor = event.getData(CommonDataKeys.EDITOR);
@@ -84,7 +83,7 @@ public class ActionVisitor implements AnActionListener {
                 offset = String.valueOf(lookup.getEditor().getCaretModel().getOffset());
                 codeContext = lookup.getEditor().getDocument().getText();
                 System.out.println("!!!!!!!!!!!!!准备处理并存储数据！！！！！！！！！！！！！！！！");
-                MyThreadPool.getExecutorService().execute(new Thread(new Runnable() {
+                new Thread(new Runnable() {
                     @Override
                     public void run() {
                         System.out.println("------------------！！！！！！——————————————————————子线开始程存储数据");
@@ -100,6 +99,7 @@ public class ActionVisitor implements AnActionListener {
 
                             LookupElementPresentation lookupElementPresentation = LookupElementPresentation.renderElement(list.getModel().getElementAt(codeIfo.getSelect_num() - 1));
                             if (lookupElementPresentation.getTailText() == null) {
+
                                 selectvalue = lookupElementPresentation.getItemText();
                             } else {
                                 selectvalue = lookupElementPresentation.getItemText() + lookupElementPresentation.getTailText();
@@ -111,36 +111,33 @@ public class ActionVisitor implements AnActionListener {
                         System.out.println("lookup长度：" + lookup.getList().getModel().getSize());
                         time_of_select = System.currentTimeMillis();
                         System.out.println("开始对推荐列表代码进行分类");
-                        for (int i = 0; i < len; i++) {
-                            try {
-                                classify = new Classify(list.getModel().getElementAt(i));
-                                classify.sorting();
-                            } catch (Exception e) {
-                            }
-                            if (i == 0 || classify.getAiXcoder() != null) {
-                                //将第一条记录添加到aixcoder中
-                                AiXcode.add(LookupElementPresentation.renderElement(list.getModel().getElementAt(i)).getItemText());
-                                if (codeIfo.getSelect_num() - 1 == i) {
-                                    codeIfo.setCode_from("AiXcoder");
-                                }
-                                AiXcoderCodeIndex.add(i);
-                            }
-                            if ((classify.getIDEAcode() != null) && !classify.getIDEAcode().equals("             ")) {
-                                IDEcodea.add(classify.getIDEAcode());
-                                if (codeIfo.getSelect_num() - 1 == i) {
-                                    codeIfo.setCode_from("IDEA");
-                                }
-                                IDEACodeIndex.add(i);
-                            }
-                        }
-//                        }
+
+                        classify = new Classify(list, lookup.getSelectedIndex());
+                        classify.sorting();
+
+                        codeIfo.setCode_from(classify.getSelectcodeFrom());
+                        codeIfo.setAiXcode(classify.getAixcoder().toString());
+                        codeIfo.setIDEAcode(classify.getIde().toString());
+                        codeIfo.setKiteCode(classify.getKite().toString());
+
+                        codeIfo.setAiXcode_num(String.valueOf(classify.getAixcoder().size()));
+                        codeIfo.setIDEAcode_num(String.valueOf(classify.getIde().size()));
+                        codeIfo.setKitecode_num(String.valueOf(classify.getKite().size()));
+
+                        System.out.println("sssssssss" + classify.getIDEACodeIndex().toString());
+                        codeIfo.setIDEAcode_index(classify.getIDEACodeIndex().toString());
+                        codeIfo.setAiXcoder_index(classify.getAiXcoderCodeIndex().toString());
+                        codeIfo.setKitecode_index(classify.getKiteCodeIndex().toString());
+//                        System.out.println(classify.getAixcoder().toString());
+//                        System.out.println(classify.getIde().toString());
+//                        System.out.println(classify.getKite().toString());
 //                        if ((event.getInputEvent().toString().contains("Enter") || event.getInputEvent().toString().contains("Tab")) && list != null) {
                         //数据存入本地
                         SimpleDateFormat tf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
 
 
                         System.out.println("数据开始入库！！！！！！！！！！！！！！！");
-                        String sql = "insert into "+TypeEntity.getTableName()+" (time, dataContext,codeContext,caretOffset,coder_input,coder_select,select_num,code_from,IDEAcode," +
+                        String sql = "insert into " + TypeEntity.getTableName() + " (time, dataContext,codeContext,caretOffset,coder_input,coder_select,select_num,code_from,IDEAcode," +
                                 "IDEAcode_num,IDEAcode_index,AiXcode,AiXcode_num,AiXcoder_index,KiteCode,Kitecode_num,Kitecode_index," +
                                 "time_input_to_show,time_of_select_code,delete_behavior) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                         List<Object> params = new ArrayList<>();
@@ -152,48 +149,30 @@ public class ActionVisitor implements AnActionListener {
                         params.add(selectvalue);
                         params.add(codeIfo.getSelect_num());
                         params.add(codeIfo.getCode_from());
-                        params.add(IDEcodea.toString());
-                        params.add(IDEcodea.size());
-                        params.add(IDEACodeIndex.toString());
-                        params.add(AiXcode.toString());
-                        params.add(AiXcode.size());
-                        params.add(AiXcoderCodeIndex.toString());
-                        params.add(Kitecode.toString());
-                        params.add(Kitecode.size());
-                        params.add(KiteCodeIndex.toString());
+
+                        params.add(codeIfo.getIDEAcode());
+                        params.add(codeIfo.getIDEAcode_num());
+                        params.add(codeIfo.getIDEAcode_index());
+
+                        params.add(codeIfo.getAiXcode());
+                        params.add(codeIfo.getAiXcode_num());
+                        params.add(codeIfo.getAiXcoder_index());
+
+                        params.add(codeIfo.getKiteCode());
+                        params.add(codeIfo.getKitecode_num());
+                        params.add(codeIfo.getKitecode_index());
+
                         params.add(Math.abs(time_of_codelist - time_of_input));
                         params.add(Math.abs(time_of_select - time_of_input));
                         params.add(deleteCode);
-
-//                        String[] line = {tf.format(new Date()),
-//                                dataContext.toString(),
-//                                codeContext,
-//                                offset,
-//                                input,
-//                                selectvalue,
-//                                Integer.toString(codeIfo.getSelect_num()),
-//                                codeIfo.getCode_from(),
-//                                IDEcodea.toString(),
-//                                Integer.toString(IDEcodea.size()),
-//                                IDEACodeIndex.toString(),
-//                                AiXcode.toString(),
-//                                Integer.toString(AiXcode.size()),
-//                                AiXcoderCodeIndex.toString(),
-//                                Kitecode.toString(),
-//                                Integer.toString(Kitecode.size()),
-//                                KiteCodeIndex.toString(), Long.toString(Math.abs(time_of_codelist - time_of_input)), Long.toString(Math.abs(time_of_select - time_of_input)), deleteCode};
-//                        try {
-//                            CSVWriter writer = new CSVWriter(new FileWriter(TypeEntity.getCsvPath(), true));
-//                            writer.writeNext(line);
-//                            writer.close();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
+                        System.out.println(codeIfo.toString());
+                        System.out.println(params);
 
                         try {
                             jdbcUtils.getConnection();
                             boolean flag = jdbcUtils.updateByPreparedStatement(sql, params);
                             System.out.println(flag + "写入成功");
+                            jdbcUtils.connClose();
                         } catch (Exception e) {
                             // TODO Auto-generated catch block
                             System.out.println("写入失败，请检查连接");
@@ -219,8 +198,10 @@ public class ActionVisitor implements AnActionListener {
                             sqlStr = sqlStr.substring(0, sqlStr.length() - 1);
                             jdbcUtils = new JdbcUtils();
                             jdbcUtils.getConnection();
-                            sql = "UPDATE " +TypeEntity.getTableName()+ " SET " + sqlStr + " ORDER BY time DESC LIMIT 1";
+                            sql = "UPDATE " + TypeEntity.getTableName() + " SET " + sqlStr + " ORDER BY time DESC LIMIT 1";
+                            System.out.println("upsql:" + sql);
                             boolean flag = jdbcUtils.executeQuery(sql);
+                            jdbcUtils.connClose();
                             System.out.println(flag + "action数据写入成功");
                             actionType.clear();
                         } catch (SQLException e) {
@@ -228,7 +209,7 @@ public class ActionVisitor implements AnActionListener {
                             e.printStackTrace();
                         }
                     }
-                }));
+                }).start();
 
             }
         }

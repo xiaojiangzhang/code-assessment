@@ -9,7 +9,7 @@ public class ThreadDiag extends Thread {
     private JDialog parentFrame = null;//提示框的父窗体
     private JDialog clueDiag = null;// “线程正在运行”提示框
     private Dimension dimensions = Toolkit.getDefaultToolkit().getScreenSize();
-    private int width = dimensions.width / 4, height = 60;
+    private int width = dimensions.width / 4, height = 80;
     private int left = 0, top = 0;
 
     public ThreadDiag(JDialog parentFrame, Thread currentThread, String messages) {

@@ -17,22 +17,23 @@ public class JdbcUtils {
     private Statement stat;
 
     public JdbcUtils() {
-//        try {
-//            Class.forName(DRIVER);
-//
-//        } catch (Exception e) {
-//
-//        }
+        try {
+            Class.forName(TypeEntity.getDriver());
+
+        } catch (Exception e) {
+
+        }
     }
 
     public Connection getConnection() {
 //        try {
-//            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+//            connection = DriverManager.getConnection(TypeEntity.getDburl(), TypeEntity.getUser(), TypeEntity.getPassword());
 //        } catch (SQLException e) {
 //            // TODO Auto-generated catch block
 //            e.printStackTrace();
 //        }
 //        从数据库连接池取出连接
+
         connection = MySourceDataPool.getConnection();
         return connection;
     }
@@ -55,6 +56,16 @@ public class JdbcUtils {
         return tableName;
     }
 
+    public void connClose() {
+
+        try {
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
+
     //向macData表中插入数据
     public void insertMacData(String macAddr, String tableName) throws SQLException {
         String sql = "insert into macData(macAddr,tableName) values(?,?)";
@@ -63,6 +74,7 @@ public class JdbcUtils {
         pstmt.setString(2,tableName);
         pstmt.executeUpdate();
         pstmt.close();
+
     }
 
     //根据mac地址创建表
@@ -304,7 +316,7 @@ public class JdbcUtils {
     public static void main(String[] args) throws SQLException {
         // TODO Auto-generated method stub
         JdbcUtils jdbcUtils = new JdbcUtils();
-        jdbcUtils.getConnection();
+//        jdbcUtils.getConnection();
         String sql2 = "show global status ";
         //List<Map<String, Object>> list = jdbcUtils.findModeResult(sql2, null);
         /*for (int i = 0; i < list.size(); i++) {

@@ -9,12 +9,14 @@ import java.util.concurrent.Executors;
  */
 public class MyThreadPool {
     private static ExecutorService executorService;
+    private static boolean statusFlags = false;
 
     /**
      * 创建一个固定大小线程池
      */
     static {
         executorService = Executors.newFixedThreadPool(8);
+        statusFlags = true;
     }
 
     /**
@@ -25,11 +27,16 @@ public class MyThreadPool {
 
     /**
      * 获取线程池对象
-     *
+     * 返回线程池对象时检查线程池是否已经创建
      * @return executorService
      */
     public static ExecutorService getExecutorService() {
-        return executorService;
+        if (statusFlags) {
+            return executorService;
+        } else {
+            MyThreadPool.init();
+            return executorService;
+        }
     }
 
     /**

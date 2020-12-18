@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>Coder_Plugin</id>
     <name>Coder_Plugin</name>
-    <version>1.0</version>
+    <version>1.2</version>
     <vendor email="xiaojiang_719@163.com" url="http://www.xiaojiangzhang.top">CodeQuality</vendor>
 
     <!--    <description><![CDATA[-->
@@ -45,8 +45,8 @@
         <!--    </action>-->
         <action id="Efficiency Evaluation" class="com.coderPlugin.EfficiencyEvaAction" text="Efficiency Evaluation"
                 description="Analysis Data from coder">
-            <add-to-group group-id="CodeMenu" anchor="after" relative-to-action="Generate"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="ctrl Q"/>
+            <add-to-group group-id="CodeMenu" anchor="first" />
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl Q" />
         </action>
         <action id="Quality Evaluation" class="com.coderPlugin.QualityEvalAction" text="Quality Evaluation"
                 description="Quality Evaluation">

@@ -6,8 +6,8 @@ package ConfigPara;
 public class TypeEntity {
     private static String csvPath = "C:\\Users\\xiaojiangzhang\\data.csv";
     private static String user = "root";
-    private static String password = "xiaojiangzhang";
-    private static String dburl = "jdbc:mysql://47.101.184.222:3306/API4Record?characterEncoding=UTF-8&useSSL=false";
+    private static String password = "!@#Qwer1234";
+    private static String dburl = "jdbc:mysql://192.168.100.239:3306/API4Record?characterEncoding=UTF-8&useSSL=false";
     private static String driver = "com.mysql.jdbc.Driver";
     private static String tableName = "";
     private static String tool1 = "IDEA";

@@ -253,4 +253,30 @@ public class CodeIfo {
         this.delete_behavior = delete_behavior;
     }
 
+    @Override
+    public String toString() {
+        return "CodeIfo{" +
+                "id='" + id + '\'' +
+                ", time='" + time + '\'' +
+                ", dataContext='" + dataContext + '\'' +
+                ", codeContext='" + codeContext + '\'' +
+                ", caretOffset='" + caretOffset + '\'' +
+                ", coder_input='" + coder_input + '\'' +
+                ", coder_select='" + coder_select + '\'' +
+                ", select_num=" + select_num +
+                ", code_from='" + code_from + '\'' +
+                ", IDEAcode='" + IDEAcode + '\'' +
+                ", IDEAcode_num='" + IDEAcode_num + '\'' +
+                ", IDEAcode_index='" + IDEAcode_index + '\'' +
+                ", AiXcode='" + AiXcode + '\'' +
+                ", AiXcode_num='" + AiXcode_num + '\'' +
+                ", AiXcoder_index='" + AiXcoder_index + '\'' +
+                ", KiteCode='" + KiteCode + '\'' +
+                ", Kitecode_num='" + Kitecode_num + '\'' +
+                ", Kitecode_index='" + Kitecode_index + '\'' +
+                ", time_input_to_show='" + time_input_to_show + '\'' +
+                ", time_of_select_code='" + time_of_select_code + '\'' +
+                ", delete_behavior='" + delete_behavior + '\'' +
+                '}';
+    }
 }

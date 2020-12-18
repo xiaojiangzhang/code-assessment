@@ -2,40 +2,32 @@ package com.coderPlugin;
 
 import ConfigPara.TypeEntity;
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Properties;
 
 public class MySourceDataPool {
     private static BasicDataSource dataSource;
+    private static boolean statusFlag = false;
 
     /**
      * 初始化线程池
      */
     static {
         try {
+            statusFlag = true;
             dataSource = new BasicDataSource();
             dataSource.setDriverClassName(TypeEntity.getDriver());
             dataSource.setUrl(TypeEntity.getDburl());
             dataSource.setUsername(TypeEntity.getUser());
             dataSource.setPassword(TypeEntity.getPassword());
-//            initialSize=5
-//            maxActive=3
-//            maxIdle=5
-//            minIdle=3
-//            maxWait=-1
+//            最大连接数量
+            dataSource.setMaxTotal(20);
             dataSource.setInitialSize(10);
-//            dataSource.max
-            dataSource.setMaxIdle(15);
-            dataSource.setMinIdle(10);
+            dataSource.setMaxIdle(10);
+            dataSource.setMinIdle(5);
             dataSource.setMaxWaitMillis(-1);
 
         } catch (Exception e) {
@@ -44,6 +36,7 @@ public class MySourceDataPool {
     }
 
     public static void init() {
+        System.out.println("初始化数据库连接池");
     }
 
     /**
@@ -53,8 +46,13 @@ public class MySourceDataPool {
      */
     public static Connection getConnection() {
         Connection connection = null;
+        if (!statusFlag) {
+            MySourceDataPool.init();
+        }
         try {
             connection = dataSource.getConnection();
+//            System.out.println("取出数据库连接");
+            System.out.println("数据库连接池信息----当前活跃数量：" + dataSource.getNumActive() + ", 最大可连接数量：" + dataSource.getMaxTotal());
         } catch (SQLException e) {
             e.printStackTrace();
         }

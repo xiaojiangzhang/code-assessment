@@ -5,70 +5,155 @@ import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 
 import javax.swing.*;
-import java.util.Objects;
+import java.util.*;
 
 //对用户选择后的代码推荐列表进行遍历
 //JList<LookupElement> list
 public class Classify {
+    private List<Integer> IDEACodeIndex = new ArrayList<Integer>();
+    private List<Integer> AiXcoderCodeIndex = new ArrayList<Integer>();
+    private List<Integer> KiteCodeIndex = new ArrayList<Integer>();
+
     LookupElementPresentation lookupElementPresentation;
     LookupElement lookupElement;
-    String IDEAcode;
-    String AiXcoder;
-    String Kitecode;
+    static JList list;
+    List<String> aixcoder = new ArrayList<>();
+    List<String> ide = new ArrayList<>();
+    List<String> kite = new ArrayList<>();
+    static String[] keyphs = null;
+    static HashMap<String, String> baoliuzi = new HashMap<>();
 
-    public String getIDEAcode() {
-        return IDEAcode;
+    static {
+        keyphs = new String[]{"False", "None", "True", "and", "as", "assert", "break", "class", "continue", "def", "del", "elif", "else", "except",
+                "finally", "for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal", "not", "or", "pass", "raise",
+                "return", "try", "while", "with", "yield"};
+        for (int i = 0; i < keyphs.length; i++) {
+            baoliuzi.put(keyphs[i], keyphs[i]);
+        }
     }
 
-    public String getAiXcoder() {
-        return AiXcoder;
+    public List<String> getAixcoder() {
+        return aixcoder;
     }
 
-    public String getKitecode() {
-        return Kitecode;
+    public void setAixcoder(List<String> aixcoder) {
+        this.aixcoder = aixcoder;
     }
 
-    public Classify(LookupElement lookupElement) {
-        this.lookupElement = lookupElement;
+    public List<String> getIde() {
+        return ide;
+    }
+
+    public void setIde(List<String> ide) {
+        this.ide = ide;
+    }
+
+    public List<String> getKite() {
+        return kite;
+    }
+
+    public void setKite(List<String> kite) {
+        this.kite = kite;
+    }
+
+    static String selectcodeFrom = "";
+    static int selectIndex;
+
+    public String getSelectcodeFrom() {
+        return selectcodeFrom;
+    }
+
+    public void setSelectcodeFrom(String selectcodeFrom) {
+        Classify.selectcodeFrom = selectcodeFrom;
+    }
+
+    public List<Integer> getIDEACodeIndex() {
+        return IDEACodeIndex;
+    }
+
+    public void setIDEACodeIndex(List<Integer> IDEACodeIndex) {
+        this.IDEACodeIndex = IDEACodeIndex;
+    }
+
+    public List<Integer> getAiXcoderCodeIndex() {
+        return AiXcoderCodeIndex;
+    }
+
+    public void setAiXcoderCodeIndex(List<Integer> aiXcoderCodeIndex) {
+        AiXcoderCodeIndex = aiXcoderCodeIndex;
+    }
+
+    public List<Integer> getKiteCodeIndex() {
+        return KiteCodeIndex;
+    }
+
+    public void setKiteCodeIndex(List<Integer> kiteCodeIndex) {
+        KiteCodeIndex = kiteCodeIndex;
+    }
+
+    public Classify(JList list, int selectedIndex) {
+        this.list = list;
+        this.selectIndex = selectedIndex;
     }
 
 
     public void sorting() {
-        lookupElementPresentation = LookupElementPresentation.renderElement(lookupElement);
-        //图标为空默认属于IDEA
-        String tailText = lookupElementPresentation.getTailText();
-        String iconText = lookupElementPresentation.getIcon().toString();
-        String myItemText = lookupElementPresentation.getItemText();
-        if (tailText != null) {//后缀不为空 多token预测
-            if (lookupElementPresentation.getIcon() == null) {
-                IDEAcode = myItemText;
-            } else if (iconText.contains(TypeEntity.getTool1key())) {//IDEA
-                System.out.println(lookupElementPresentation.getIcon());
-                IDEAcode = myItemText + lookupElementPresentation.getTailText();
-            } else if (iconText.contains("EmptyIcon")) {
-                IDEAcode = myItemText + lookupElementPresentation.getTailText();
-            } else if (iconText.contains(TypeEntity.getTool2key())) {//AIXCODER
-                AiXcoder = myItemText + lookupElementPresentation.getTailText();
-            } else if (iconText.contains(TypeEntity.getTool3key())) {//Kite
-                Kitecode = myItemText + lookupElementPresentation.getTailText();
+        int length = list.getModel().getSize();
+        for (int i = 0; i < list.getModel().getSize(); i++) {
+            lookupElement = (LookupElement) list.getModel().getElementAt(i);
+            lookupElementPresentation = LookupElementPresentation.renderElement(lookupElement);
+            //图标为空默认属于IDEA
+            String tailText = lookupElementPresentation.getTailText();
+            String label = "";
+            try {
+                label = lookupElementPresentation.getIcon().toString();
+                label.replace('J', 'j');
+            } catch (Exception e) {
+                System.out.println(e);
             }
-        } else if(tailText == null){
-            lookupElementPresentation.getTailText();//后缀为空单token预测   没有图标默认为IDEA预测代码
-            if (lookupElementPresentation.getIcon() == null) {
-                IDEAcode = lookupElementPresentation.getItemText();
-            } else if (iconText.contains(TypeEntity.getTool1key())) {//IDEA
-                IDEAcode = lookupElementPresentation.getItemText();
-            } else if (iconText.contains("EmptyIcon")) {
-                IDEAcode = lookupElementPresentation.getItemText();
-            } else if (iconText.contains(TypeEntity.getTool2key())) {//AIXCODER
-                AiXcoder = lookupElementPresentation.getItemText();
+
+//            if (lookupElementPresentation.getIcon() != null) {
+//                label = lookupElementPresentation.getIcon().toString();
+//            }
+            String generateCode = lookupElementPresentation.getItemText();
+
+            if (tailText != null) {
+                generateCode = generateCode + tailText;
             }
-            if (lookupElementPresentation.getIcon() != null) {
-                if (iconText.contains(TypeEntity.getTool3key())) {//Kite
-                    Kitecode = lookupElementPresentation.getItemText();
-                }
+            //IDEA来源
+            if (i == 0 && label.equals(" ") && !baoliuzi.containsKey(generateCode)) {
+                aixcoder.add(generateCode);
+                AiXcoderCodeIndex.add(i);
+                selectcodeFrom = "AiXcoder";
+            } else if (label.contains(TypeEntity.getTool1key())) {
+                ide.add(generateCode);
+                selectcodeFrom = "IDEA";
+                IDEACodeIndex.add(i);
+
+            } else if (label.contains(TypeEntity.getTool2key())) {
+                aixcoder.add(generateCode);
+                selectcodeFrom = "AiXcoder";
+                AiXcoderCodeIndex.add(i);
+
+            } else if (label.contains(TypeEntity.getTool3key())) {
+                kite.add(generateCode);
+                selectcodeFrom = "Kite";
+                KiteCodeIndex.add(i);
+
+            } else if (label.equals("") && baoliuzi.containsKey(generateCode)) {
+                ide.add(generateCode);
+                selectcodeFrom = "IDEA";
+                IDEACodeIndex.add(i);
+
+            } else if (label.equals("")) {
+                ide.add(generateCode);
+                selectcodeFrom = "IDEA";
+                IDEACodeIndex.add(i);
             }
+
+
         }
+
     }
 
 

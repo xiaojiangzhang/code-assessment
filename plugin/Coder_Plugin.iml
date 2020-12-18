@@ -8,18 +8,23 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jfreechart-1.0.13" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.40" level="project" />
-    <orderEntry type="library" name="okhttp-3.9.0" level="project" />
-    <orderEntry type="library" name="commons-dbcp2-2.8.0" level="project" />
-    <orderEntry type="library" name="commons-beanutils-1.9.4" level="project" />
-    <orderEntry type="library" name="jcommon-1.0.16" level="project" />
-    <orderEntry type="library" name="commons-collections4-4.4" level="project" />
+    <orderEntry type="library" exported="" name="jfreechart-1.0.13" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.1.40" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.9.0" level="project" />
+    <orderEntry type="library" exported="" name="commons-dbcp2-2.8.0" level="project" />
+    <orderEntry type="library" exported="" name="commons-beanutils-1.9.4" level="project" />
+    <orderEntry type="library" exported="" name="commons-collections4-4.4" level="project" />
+    <orderEntry type="library" exported="" name="commons-collections-3.2.1" level="project" />
+    <orderEntry type="library" exported="" name="commons-lang3-3.11" level="project" />
+    <orderEntry type="library" exported="" name="commons-logging-1.2" level="project" />
+    <orderEntry type="library" exported="" name="commons-pool2-2.9.0" level="project" />
+    <orderEntry type="library" exported="" name="dom4j-1.6.1" level="project" />
+    <orderEntry type="library" exported="" name="gnujaxp" level="project" />
+    <orderEntry type="library" exported="" name="plugin-rapidly-0.5.1.6" level="project" />
+    <orderEntry type="library" name="jfreechart-1.0.16-experimental" level="project" />
+    <orderEntry type="library" name="jcommon-1.0.20" level="project" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="C:\Python27\python.exe" />
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>

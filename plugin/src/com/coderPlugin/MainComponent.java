@@ -36,7 +36,7 @@ public class MainComponent implements ProjectComponent {
 
     @Override
     public void initComponent() {
-//        初始化数据存储
+//        初始化数据存储本地csv
 //        String property = System.getProperties().getProperty("user.home");
 //        String dataName = "\\data.csv";
 //        File dataFile = new File(property + dataName);
@@ -67,7 +67,7 @@ public class MainComponent implements ProjectComponent {
          * current tablename = mac的table里
          *
          */
-        MyThreadPool.getExecutorService().execute(new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 GetMacAdd gmc = new GetMacAdd();
@@ -89,7 +89,7 @@ public class MainComponent implements ProjectComponent {
                     e.printStackTrace();
                 }
             }
-        }));
+        }).start();
 
 
 //        初始化action监听
