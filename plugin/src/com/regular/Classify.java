@@ -5,6 +5,7 @@ import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 
 import javax.swing.*;
+import java.awt.color.ColorSpace;
 import java.util.*;
 
 //对用户选择后的代码推荐列表进行遍历
@@ -104,6 +105,7 @@ public class Classify {
             lookupElementPresentation = LookupElementPresentation.renderElement(lookupElement);
             //图标为空默认属于IDEA
             String tailText = lookupElementPresentation.getTailText();
+            ColorSpace a = lookupElementPresentation.getItemTextForeground().getColorSpace();
             String label = "";
             try {
                 label = lookupElementPresentation.getIcon().toString();
@@ -111,6 +113,7 @@ public class Classify {
             } catch (Exception e) {
                 System.out.println(e);
             }
+
 
 //            if (lookupElementPresentation.getIcon() != null) {
 //                label = lookupElementPresentation.getIcon().toString();
@@ -120,38 +123,37 @@ public class Classify {
             if (tailText != null) {
                 generateCode = generateCode + tailText;
             }
+            System.out.println("第" + i + "个label:" + label);
+            System.out.println("第" + i + "个代码:" + generateCode);
+            System.out.println();
+            String currentCodeFrom = "";
             //IDEA来源
-            if (i == 0 && label.equals(" ") && !baoliuzi.containsKey(generateCode)) {
+            /*if (i == 0 && label.equals(" ") && !baoliuzi.containsKey(generateCode)) {
                 aixcoder.add(generateCode);
                 AiXcoderCodeIndex.add(i);
                 selectcodeFrom = "AiXcoder";
-            } else if (label.contains(TypeEntity.getTool1key())) {
-                ide.add(generateCode);
-                selectcodeFrom = "IDEA";
-                IDEACodeIndex.add(i);
+            } */
 
-            } else if (label.contains(TypeEntity.getTool2key())) {
+            if (label.contains(TypeEntity.getTool2key())) {
                 aixcoder.add(generateCode);
-                selectcodeFrom = "AiXcoder";
+                currentCodeFrom = "AiXcoder";
                 AiXcoderCodeIndex.add(i);
 
             } else if (label.contains(TypeEntity.getTool3key())) {
                 kite.add(generateCode);
-                selectcodeFrom = "Kite";
+                currentCodeFrom = "Kite";
                 KiteCodeIndex.add(i);
-
-            } else if (label.equals("") && baoliuzi.containsKey(generateCode)) {
+            } else {
                 ide.add(generateCode);
-                selectcodeFrom = "IDEA";
-                IDEACodeIndex.add(i);
-
-            } else if (label.equals("")) {
-                ide.add(generateCode);
-                selectcodeFrom = "IDEA";
+                currentCodeFrom = "IDEA";
                 IDEACodeIndex.add(i);
             }
-
-
+            if (i == selectIndex) {
+                selectcodeFrom = currentCodeFrom;
+            }
+            if (selectcodeFrom.equals("")) {
+                selectcodeFrom = "IDEA";
+            }
         }
 
     }

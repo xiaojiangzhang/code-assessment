@@ -11,20 +11,20 @@ public class CodeInfoAna {
     private List<Integer> aiXcode_key_nums = new ArrayList<>();
     private List<Integer> IDEA_key_nums = new ArrayList<>();
 
-    private float IDEA_select_sum = 0;//IDEA正确推荐项完成键数
+    private double IDEA_select_sum = 0;//IDEA正确推荐项完成键数
     private int IDEA_sum = 0;//IDEA正确推荐次数
-    private float IDEA_listsize = 0;//IDEA推荐列表长度
+    private double IDEA_listsize = 0;//IDEA推荐列表长度
     private String IDEAcode = "";//IDEA生成代码
     private int IDEAfullLine_num = 0;//整行代码补全次数
     private int IDEAmultiLine_num = 0;
-    private long IDEAcodeSize;
-    private float AiXcoder_select_sum = 0;//AiXcoder正确推荐项完成键数
+    private double IDEAcodeSize;
+    private double AiXcoder_select_sum = 0;//AiXcoder正确推荐项完成键数
     private int AiXcoder_sum = 0;//AiXcoder正确推荐次数
-    private float AiXcoder_listsize = 0;//AiXcoder推荐列表长度
+    private double AiXcoder_listsize = 0;//AiXcoder推荐列表长度
     private String AiXcode = "";//AiXcoder生成代码
     private int AiXcoderfullLine_num = 0;
     private int AiXcodermultLine_num = 0;
-    private long AiXcodeSize;
+    private double AiXcodeSize;
 
     private int i = 0;
 
@@ -57,20 +57,21 @@ public class CodeInfoAna {
             IDEAcode += codeIfoList.get(i).getIDEAcode();
             AiXcode += codeIfoList.get(i).getAiXcode();
         }
-        IDEA_select_sum = IDEA_select_sum / IDEA_sum;//IDEA正确推荐项平均完成键数
-        AiXcoder_select_sum = AiXcoder_select_sum / AiXcoder_sum;//Aixcoder正确推荐项平均完成键数
+        IDEA_select_sum = (IDEA_select_sum / IDEA_sum + 0.0);//IDEA正确推荐项平均完成键数
+        AiXcoder_select_sum = (AiXcoder_select_sum / AiXcoder_sum + 0.0);//Aixcoder正确推荐项平均完成键数
 
-        IDEA_listsize = IDEA_listsize / i;//IDEA平均推荐列表长度
-        AiXcoder_listsize = AiXcoder_listsize / i;//aixcoder平均推荐列表长度
+        IDEA_listsize = (IDEA_listsize + 0.0) / (i + 0.0);//IDEA平均推荐列表长度
+        AiXcoder_listsize = (AiXcoder_listsize + 0.0) / (i + 0.0);//aixcoder平均推荐列表长度
 
-        IDEAcodeSize = getPrintSize(IDEAcode.getBytes().length);//IDEA生成总代码占用空间
-        AiXcodeSize = getPrintSize(AiXcode.getBytes().length);//aixcoder生成总代码占用空间
+        IDEAcodeSize = getPrintSize(IDEAcode.getBytes().length + 0.0);//IDEA生成总代码占用空间
+        AiXcodeSize = getPrintSize(AiXcode.getBytes().length + 0.0);//aixcoder生成总代码占用空间
 
     }
 
-    public long getPrintSize(long size) {
+    public double getPrintSize(double size) {
 //        直接以kb为单位返回
-        return size / 1024;
+        System.out.println("生成代码空间：" + (size / 1024.0));
+        return (size / 1024.0);
         //如果字节数少于1024，则直接以B为单位，否则先除于1024，后3位因太少无意义
 //        if (size < 1024) {
 //            return size;
@@ -109,7 +110,7 @@ public class CodeInfoAna {
         return IDEA_key_nums;
     }
 
-    public float getIDEA_select_sum() {
+    public double getIDEA_select_sum() {
         return IDEA_select_sum;
     }
 
@@ -117,7 +118,7 @@ public class CodeInfoAna {
         return IDEA_sum;
     }
 
-    public float getIDEA_listsize() {
+    public double getIDEA_listsize() {
         return IDEA_listsize;
     }
 
@@ -133,11 +134,11 @@ public class CodeInfoAna {
         return IDEAmultiLine_num;
     }
 
-    public long getIDEAcodeSize() {
+    public double getIDEAcodeSize() {
         return IDEAcodeSize;
     }
 
-    public float getAiXcoder_select_sum() {
+    public double getAiXcoder_select_sum() {
         return AiXcoder_select_sum;
     }
 
@@ -145,7 +146,7 @@ public class CodeInfoAna {
         return AiXcoder_sum;
     }
 
-    public float getAiXcoder_listsize() {
+    public double getAiXcoder_listsize() {
         return AiXcoder_listsize;
     }
 
@@ -161,7 +162,7 @@ public class CodeInfoAna {
         return AiXcodermultLine_num;
     }
 
-    public long getAiXcodeSize() {
+    public double getAiXcodeSize() {
         return AiXcodeSize;
     }
 

@@ -107,7 +107,6 @@ public class ChartUtils {
 		chartTheme.setPlotOutlinePaint(Color.WHITE);// 绘制区域外边框
 		chartTheme.setLabelLinkPaint(new Color(8, 55, 114));// 链接标签颜色
 		chartTheme.setLabelLinkStyle(PieLabelLinkStyle.CUBIC_CURVE);
-
 		chartTheme.setAxisOffset(new RectangleInsets(5, 12, 5, 12));
 		chartTheme.setDomainGridlinePaint(new Color(192, 208, 224));// X坐标轴垂直网格颜色
 		chartTheme.setRangeGridlinePaint(new Color(192, 192, 192));// Y坐标轴水平网格颜色
@@ -367,6 +366,9 @@ public class ChartUtils {
 		plot.setInsets(new RectangleInsets(10, 10, 5, 10));
 		StackedBarRenderer renderer = (StackedBarRenderer) plot.getRenderer();
 		renderer.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+		//设置柱状图上方显示数据
+		renderer.setItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+		renderer.setItemLabelsVisible(true);
 		plot.setRenderer(renderer);
 		setXAixs(plot);
 		setYAixs(plot);
@@ -415,7 +417,6 @@ public class ChartUtils {
 		Color lineColor = new Color(31, 121, 170);
 		plot.getDomainAxis().setAxisLinePaint(lineColor);// X坐标轴颜色
 		plot.getDomainAxis().setTickMarkPaint(lineColor);// X坐标轴标记|竖线颜色
-
 	}
 
 	/**

@@ -1,6 +1,6 @@
 package com.coderPlugin;
 
-import com.dialog.Access;
+
 import com.dialog.EffectDialog;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

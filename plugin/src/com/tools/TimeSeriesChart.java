@@ -5,9 +5,14 @@ import com.util.ChartUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.StackedBarRenderer3D;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.awt.*;
@@ -30,33 +35,24 @@ public class TimeSeriesChart {
             linedataset.addValue(Integer.valueOf(codeIfo.getIDEAcode_num()), series2, String.valueOf(i));
         }
 
-        JFreeChart jfreechart = ChartFactory.createLineChart("生成代码个数", "time", "time", linedataset, PlotOrientation.VERTICAL, true, true, true);
-
-//        Font titleFont = new Font("宋体", Font.ITALIC, 13);
-//        Font font = new Font("宋体", Font.BOLD, 10);
-//        Font legendFont = new Font("宋体", Font.BOLD, 10);
-//
-//        jfreechart.getTitle().setFont(titleFont);
-//        jfreechart.getLegend().setItemFont(legendFont);
-
+        JFreeChart jfreechart = ChartFactory.createLineChart("生成代码个数", "时间", "个数", linedataset, PlotOrientation.VERTICAL, true, false, false);
         frame1 = new ChartPanel(jfreechart, true);
         CategoryPlot plot = jfreechart.getCategoryPlot();
         ChartUtils.setChartTheme();
-        ChartUtils.setLineRender(plot, false);
+//        ChartUtils.setLineRender(plot, false);
         ChartUtils.setAntiAlias(jfreechart);
 
+
 //        plot.setBackgroundPaint(JBColor.black);
-        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-        rangeAxis.setAutoRangeIncludesZero(true);
-        rangeAxis.setUpperMargin(0.20);
-        rangeAxis.setLabelAngle(Math.PI / 2.0);
+//        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+        /*rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+        rangeAxis.setAutoRangeIncludesZero(true);*/
+//        rangeAxis.setUpperMargin(0.20);
+//        rangeAxis.setLabelAngle(Math.PI / 2.0);
     }
 
 
     public ChartPanel getChartPanel() {
-
         return frame1;
-
     }
 }

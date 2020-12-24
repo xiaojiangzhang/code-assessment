@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="添加图表access action , 保存record数据到用户路径" />
+    <list default="true" id="e6a79a24-3d11-4352-a999-65bbf6cf2889" name="Default Changelist" comment="添加图表access action , 保存record数据到用户路径">
+      <change afterPath="$PROJECT_DIR$/src/com/tools/time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_beanutils_1_9_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_beanutils_1_9_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_collections4_4_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_collections4_4_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_collections_3_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_collections_3_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_dbcp2_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_dbcp2_2_8_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_logging_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_pool2_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/commons_pool2_2_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/dom4j_1_6_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gnujaxp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gnujaxp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_16_experimental.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_0_16_experimental.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_40.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_40.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/okhttp_3_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/plugin_rapidly_0_5_1_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/plugin_rapidly_0_5_1_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coder_Plugin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coder_PluginV1.3.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Coder_Plugin1.6.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Coder_PluginV1.4.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/MainComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/QualityEvalAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/coderPlugin/QualityEvalAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/Access.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/dialog/EffectDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/Classify.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/CodeInfoAna.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/regular/CodeInfoAna.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/BarChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/BarChart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/ModelRequestHttp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/ModelRequestHttp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1$DateChooser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2$DateChooser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/Time2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/TimeSeriesChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/tools/TimeSeriesChart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Coder_Plugin/com/util/ChartUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Coder_Plugin/com/util/ChartUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bean/TimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bean/TimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/ActionMonitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/ActionMonitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/EfficiencyEvaAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/EfficiencyEvaAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MainComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MySourceDataPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MySourceDataPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/MyThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/MyThreadPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/coderPlugin/QualityEvalAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/coderPlugin/QualityEvalAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/Access.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/Access.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/Access.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/Access.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/EffectDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/EffectDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/EffectDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/EffectDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/Python.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/Python.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dialog/ThreadDiag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dialog/ThreadDiag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/regular/Classify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/regular/Classify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/regular/CodeInfoAna.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/regular/CodeInfoAna.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/BarChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/BarChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/CodeGenerateRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/CodeGenerateRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/Fanshe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/Fanshe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/GetMacAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/GetMacAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/ModelRequestHttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/ModelRequestHttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/PieChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/PieChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/Time1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/Time1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/Time2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/Time2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tools/TimeSeriesChart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tools/TimeSeriesChart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/util/ChartUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/util/ChartUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/util/Serie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/util/Serie.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,42 +130,43 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="258" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584802222470" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/dialog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com\dialog" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
-      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
-      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\com" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\lib" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\chart" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tools" />
       <recent name="com.coderPlugin" />
       <recent name="com.listen" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\com" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\lib" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src\chart" />
-      <recent name="C:\Users\xiaojiangzhang\Desktop\bug更改\plugin\src" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com\dialog" />
+      <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\src\com" />
       <recent name="C:\Users\xiaojiangzhang\Desktop\code-assessment\plugin\lib" />
+      <recent name="C:\Users\86151\Desktop\Coder_Plugin\src" />
+      <recent name="E:\昆明理工大学\张晓江-徐海燕-Java源代码插桩软件\源代码\TranslationOfYouDao\lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -115,8 +195,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EffectDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dialog.EffectDialog" />
+    <configuration name="E" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dialog.E" />
       <module name="Coder_Plugin" />
       <extension name="coverage">
         <pattern>
@@ -187,19 +267,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.E" />
       <item itemvalue="Application.Time" />
-      <item itemvalue="Application.EffectDialog" />
       <item itemvalue="Application.Time1" />
-      <item itemvalue="Plugin.Plugin" />
       <item itemvalue="Application.Access" />
       <item itemvalue="Application.LineChart" />
+      <item itemvalue="Plugin.Plugin" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Time1" />
         <item itemvalue="Application.Access" />
         <item itemvalue="Application.LineChart" />
-        <item itemvalue="Application.EffectDialog" />
-        <item itemvalue="Application.Time1" />
         <item itemvalue="Application.Time" />
       </list>
     </recent_temporary>
@@ -294,6 +373,11 @@
       <workItem from="1607945526560" duration="236000" />
       <workItem from="1607948880595" duration="240000" />
       <workItem from="1607949204511" duration="1961000" />
+      <workItem from="1608432685841" duration="12726000" />
+      <workItem from="1608469714300" duration="14425000" />
+      <workItem from="1608505707281" duration="6428000" />
+      <workItem from="1608514807690" duration="787000" />
+      <workItem from="1608515699837" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="添加界面、保存csv">
       <created>1606572278200</created>
@@ -359,6 +443,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="添加access actions、保存record数据到用户路径csv" />
     <MESSAGE value="添加界面、保存csv" />
     <MESSAGE value="添加图表access action , 保存record数据到用户路径" />
@@ -369,46 +454,66 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1607675436045" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1608452105838">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1608452105838" />
     <state x="599" y="123" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1607675079537">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="599" y="123" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1536.824@0.0.1536.824" timestamp="1607675079537" />
-    <state x="748" y="140" key="FileChooserDialogImpl" timestamp="1607694126539">
+    <state x="748" y="140" key="FileChooserDialogImpl" timestamp="1608515612921">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="748" y="140" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607694126539" />
-    <state width="1492" height="293" key="GridCell.Tab.0.bottom" timestamp="1607950202015">
+    <state x="748" y="140" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608515612921" />
+    <state width="1492" height="262" key="GridCell.Tab.0.bottom" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.0.center" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.0.center" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.0.left" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.0.left" timestamp="1608516024835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.0.right" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608516024835" />
+    <state width="1492" height="262" key="GridCell.Tab.0.right" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.1.bottom" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.1.bottom" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.1.center" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.1.center" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.1.left" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.1.left" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
-    <state width="1492" height="293" key="GridCell.Tab.1.right" timestamp="1607950202015">
+    <state width="1492" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.1.right" timestamp="1608516024836">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1492" height="293" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607950202015" />
+    <state width="1492" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.2.bottom" timestamp="1608516024836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="262" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.2.center" timestamp="1608516024836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="262" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.2.left" timestamp="1608516024836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="262" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
+    <state width="1492" height="262" key="GridCell.Tab.2.right" timestamp="1608516024836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1492" height="262" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1608516024836" />
     <state x="429" y="127" key="GuiDesigner.FormSource.Dialog" timestamp="1607676548167">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -417,10 +522,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="146" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1607937665688" />
-    <state x="353" y="0" key="SettingsEditor" timestamp="1607936544945">
+    <state x="353" y="0" key="SettingsEditor" timestamp="1608515814962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="353" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607936544945" />
+    <state x="353" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608515814962" />
+    <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1608506725299">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1608506725299" />
     <state x="467" y="10" width="602" height="804" key="find.popup" timestamp="1607935733469">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -434,29 +543,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/tools/Time1.java</url>
-          <line>170</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
-          <line>168</line>
+          <line>170</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
-          <line>117</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/coderPlugin/ActionVisitor.java</url>
-          <line>122</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/regular/Classify.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="57" />
+          <url>file://$PROJECT_DIR$/src/com/regular/CodeInfoAna.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

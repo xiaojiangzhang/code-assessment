@@ -6,8 +6,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+
 import java.io.IOException;
 import java.util.Map;
+
 import org.apache.http.ParseException;
 
 public class ModelRequestHttp {
@@ -17,6 +19,7 @@ public class ModelRequestHttp {
         //client 客户端   ---------------------------- -----   // 创建默认的httpClient实例.
         CloseableHttpClient client = HttpClients.createDefault();
         //GET     - 向指定位置获取其内容---------------// 创建httpGet
+        System.out.println("请求地址：" + url);
         HttpGet httpGet = new HttpGet(url);
         //StringEntity是httpGet对象的一个实现类
         httpGet.setHeader("Content-type", "application/json");
@@ -37,7 +40,7 @@ public class ModelRequestHttp {
     public static void main(String[] args) {
         String data = null;
         try {
-            data = sendGut("http://127.0.0.1/tbcnn",null, null);
+            data = sendGut("http://127.0.0.1/tbcnn", null, null);
         } catch (IOException e) {
             e.printStackTrace();
         }

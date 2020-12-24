@@ -13,8 +13,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -28,8 +26,6 @@ public class EffectDialog extends JDialog {
     private JButton okButton;
     private JPanel effectPanel;
     private JPanel bbb;
-
-
     private JCheckBox successGenerateCheckBox;
     private JCheckBox AVGofGenerateListCheckBox;
     private JCheckBox mutilLineNumsCheckBox;
@@ -39,14 +35,12 @@ public class EffectDialog extends JDialog {
     private JCheckBox generateCodeSizeCheckBox;
     private JTable table2;
     private DefaultTableModel defaultEffectTableModel;
-    private JPanel f1;
-    private JPanel f2;
-    private JPanel f3;
     private JPanel aaa;
     private JCheckBox generateCodeNumsCheckBox;
     private JPanel selectTimePanel;
     private JPanel startTimeJPanel;
     private JPanel endTimeJPanel;
+    private JButton clearButton;
     JDialog qualityThreadDialogFrame = null;
 
     //    codeInfoAna缓存 <time, codeInfoAna>
@@ -57,6 +51,7 @@ public class EffectDialog extends JDialog {
     private CodeInfoAna codeInfoAna;
     private List<CodeIfo> codeIfoList;
     private String[] effectValue;
+    private String data = null;
 
 
     public EffectDialog() {
@@ -92,8 +87,23 @@ public class EffectDialog extends JDialog {
                 String endTime = sdf.format(t2.getDate());
                 //读取数据库中时间段内代码生成记录
                 codeIfoList = CodeGenerateRecord.getRecordFromStartEndTime(startTime, endTime);
+
+
                 if (codeIfoList.size() == 0 && flag) {
                     Messages.showMessageDialog("所选时间段内无代码生成记录，请重新选择时间段！", "提示", Messages.getInformationIcon());
+                }
+                //若没有选择指标，提示用户
+                if (!successGenerateBeateCheckBox.isSelected() &&
+                        !successGenerateCheckBox.isSelected() &&
+                        !AVGofGenerateListCheckBox.isSelected() &&
+                        !generateCodeNumsCheckBox.isSelected() &&
+                        !generateCodeSizeCheckBox.isSelected() &&
+                        !singleLineNumsCheckBox.isSelected() &&
+                        !mutilLineNumsCheckBox.isSelected() &&
+                        !successKeyNumsCheckBox.isSelected()) {
+
+                    Messages.showMessageDialog("当前没有选择指标，请选择指标！", "提示", Messages.getInformationIcon());
+
                 } else {
                     if (flag) {
 //                    检查checkbox选中情况
@@ -102,6 +112,26 @@ public class EffectDialog extends JDialog {
                         Thread effectThread = new Thread() {
                             @Override
                             public void run() {
+                                //发请求
+                                if (!effectValueMap.containsKey(startTime + endTime)) {
+                                    String url = "http://47.101.184.222/effect?s=" + startTime.replace(" ", "/") +
+                                            "&e=" + endTime.replace(" ", "%") + "&t=" + TypeEntity.getTableName();
+                                    System.out.println(url);
+                                    try {
+                                        data = ModelRequestHttp.sendGut("http://192.168.100.223:1024/effect?s=" + startTime.replace(" ", "/") +
+                                                "&e=" + endTime.replace(" ", "/") + "&t=" + TypeEntity.getTableName(), null, null);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (data.contains("500")) {
+                                        data = "[0,0,0,0,0,0,0,0]";
+                                    }
+//                                    data = "[1,2,3,4,5,6,7,8]";
+                                    effectValue = data.substring(1, data.length() - 1).split(",");
+                                    effectValueMap.put(startTime + endTime, effectValue);
+                                } else {
+                                    effectValue = effectValueMap.get(startTime + endTime);
+                                }
                                 if (!codeInfoAnaMap.containsKey(startTime + endTime)) {
 //                        计算各项指标
                                     codeInfoAna = new CodeInfoAna(codeIfoList);
@@ -113,58 +143,48 @@ public class EffectDialog extends JDialog {
                                     codeInfoAna = codeInfoAnaMap.get(startTime + endTime);
                                     codeIfoList = codeInfoListMap.get(startTime + endTime);
                                 }
-//                        判断check box
+//判断check box
                                 if (successGenerateBeateCheckBox.isSelected()) {
                                     aaa.add(new PieChart(codeInfoAna).getChartPanel());
                                 }
                                 if (generateCodeNumsCheckBox.isSelected()) {
                                     aaa.add(new TimeSeriesChart(codeIfoList).getChartPanel());
                                 }
-//                                生成代码占用空间
+
+                                if (mutilLineNumsCheckBox.isSelected() ||
+                                        singleLineNumsCheckBox.isSelected()) {
+                                    DefaultCategoryDataset dataset1 = single_double_line_code_chackBoxStatus(codeInfoAna);
+                                    aaa.add(new BarChart(dataset1, "次数").getChartPanel());
+                                }
+
+                                //生成代码占用空间
                                 if (generateCodeSizeCheckBox.isSelected()) {
                                     DefaultCategoryDataset dataset_CodeSize = dataset_CodeSize(codeInfoAna);
-                                    aaa.add(new BarChart(dataset_CodeSize,"KB").getChartPanel());
+                                    aaa.add(new BarChart(dataset_CodeSize, "空间(KB)").getChartPanel());
                                 }
-                                if (mutilLineNumsCheckBox.isSelected() ||
-                                        singleLineNumsCheckBox.isSelected() ||
-                                        successKeyNumsCheckBox.isSelected() ||
+
+                                if (successKeyNumsCheckBox.isSelected() ||
                                         successGenerateCheckBox.isSelected() ||
                                         AVGofGenerateListCheckBox.isSelected()
                                 ) {
-                                    DefaultCategoryDataset defaultCategoryDataset = chackBoxStatus(codeInfoAna);
-                                    aaa.add(new BarChart(defaultCategoryDataset,"大小").getChartPanel());
+                                    DefaultCategoryDataset dataset2 = chackBoxStatus(codeInfoAna);
+                                    aaa.add(new BarChart(dataset2, "次数/长度").getChartPanel());
                                 }
 
-                                if (!effectValueMap.containsKey(startTime + endTime)) {
-                                    String data = null;
-                                    String url = "http://47.101.184.222/effect?s=" + startTime.replace(" ", "%") +
-                                            "&e=" + endTime.replace(" ", "%") + "&t=" + TypeEntity.getTableName();
-                                    System.out.println(url);
-                                    try {
-                                        data = ModelRequestHttp.sendGut("http://192.168.100.223:1024/effect?s=" + startTime.replace(" ", "%") +
-                                                "&e=" + endTime.replace(" ", "%") + "&t=" + TypeEntity.getTableName(), null, null);
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-//                                    data = "[1,2,3,4,5,6,7,8]";
-                                    effectValue = data.substring(1, data.length() - 1).split(",");
-                                    effectValueMap.put(startTime + endTime, effectValue);
-                                } else {
-                                    effectValue = effectValueMap.get(startTime + endTime);
-                                }
-                                //        初始化代码效率属性表格数据
+                                //        初始化代码质量属性表格数据
                                 _initeffecTableData(defaultEffectTableModel, effectValue);
-                                //        初始化代码效率属性表格控件
+                                //        初始化代码质量属性表格控件
                                 _initEffecTable(defaultEffectTableModel);
                                 contentPane.updateUI();
                             }
                         };
                         (new ThreadDiag(qualityThreadDialogFrame, effectThread, "正在执行，请等待......")).start();//启动等待提示框线程
                         effectThread.start();
+                        if (data.equals("[0,0,0,0,0,0,0,0]")) {
+                            Messages.showMessageDialog("所选时间段内代码自动生成记录解析失败，请重新选择时间段！", "提示", Messages.getInformationIcon());
+                        }
                     }
                 }
-
-//
             }
         });
         buttonCancel.addActionListener(new ActionListener() {
@@ -177,6 +197,26 @@ public class EffectDialog extends JDialog {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 onCancel();
+            }
+        });
+
+        //设置清空按钮监听
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                //清空质量表格
+                defaultEffectTableModel.getDataVector().clear();
+                //清空图表
+                aaa.removeAll();
+                successGenerateBeateCheckBox.setSelected(false);
+                successGenerateCheckBox.setSelected(false);
+                AVGofGenerateListCheckBox.setSelected(false);
+                generateCodeNumsCheckBox.setSelected(false);
+                generateCodeSizeCheckBox.setSelected(false);
+                singleLineNumsCheckBox.setSelected(false);
+                mutilLineNumsCheckBox.setSelected(false);
+                successKeyNumsCheckBox.setSelected(false);
+                contentPane.updateUI();
             }
         });
 
@@ -199,7 +239,6 @@ public class EffectDialog extends JDialog {
         String endTime = fmt.format(d2);
         //System.out.println("'"+startTime+"'");
         //System.out.println("'"+endTime+"'");
-
 
         if (startTime.equals(endTime)) {
             Messages.showMessageDialog("开始时间与结束时间相同，请重新输入！", "提示", Messages.getInformationIcon());
@@ -240,14 +279,15 @@ public class EffectDialog extends JDialog {
      */
     private void initCheckBox() {
         successGenerateBeateCheckBox.setSelected(true);
-        successGenerateCheckBox.setSelected(true);
+        successGenerateCheckBox.setSelected(false);
         AVGofGenerateListCheckBox.setSelected(true);
-        generateCodeNumsCheckBox.setSelected(true);
-//        this.mutilLineNumsCheckBox.setSelected(true);
-        singleLineNumsCheckBox.setSelected(true);
-//        this.successGenerateBeateCheckBox.setSelected(true);
+        generateCodeNumsCheckBox.setSelected(false);
+        generateCodeSizeCheckBox.setSelected(true);
+        singleLineNumsCheckBox.setSelected(false);
         successKeyNumsCheckBox.setSelected(true);
+        mutilLineNumsCheckBox.setSelected(false);
     }
+
     private DefaultCategoryDataset dataset_CodeSize(CodeInfoAna codeInfoAna) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 //        生成代码占用空间
@@ -257,19 +297,34 @@ public class EffectDialog extends JDialog {
         }
         return dataset;
     }
+
+    private DefaultCategoryDataset single_double_line_code_chackBoxStatus(CodeInfoAna codeInfoAna) {
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+        if (mutilLineNumsCheckBox.isSelected()) {
+            dataset.addValue(codeInfoAna.getIDEAmultiLine_num(), "多行代码生成次数", "IDE");
+            dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "多行代码生成次数", "aiXcoder");
+        }
+        if (singleLineNumsCheckBox.isSelected()) {
+            dataset.addValue(codeInfoAna.getIDEAfullLine_num(), "单行代码生成次数", "IDE");
+            dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "单行代码生成次数", "aiXcoder");
+        }
+        return dataset;
+    }
+
     /**
      * 检查chackBox选中状态 准备 f1图标数据
      */
     private DefaultCategoryDataset chackBoxStatus(CodeInfoAna codeInfoAna) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        if (mutilLineNumsCheckBox.isSelected()) {
+        /*if (mutilLineNumsCheckBox.isSelected()) {
             dataset.addValue(codeInfoAna.getIDEAmultiLine_num(), "多行代码生成次数", "IDEA");
             dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "多行代码生成次数", "aiXcoder");
         }
         if (singleLineNumsCheckBox.isSelected()) {
             dataset.addValue(codeInfoAna.getIDEAfullLine_num(), "单行代码生成次数", "IDEA");
             dataset.addValue(codeInfoAna.getAiXcoderfullLine_num(), "单行代码生成次数", "aiXcoder");
-        }
+        }*/
 //        成功推荐代码平均按键次数
         if (successKeyNumsCheckBox.isSelected()) {
             dataset.addValue(codeInfoAna.getAiXcoder_select_sum(), "成功推荐代码平均按键次数", "aiXcoder");
@@ -285,7 +340,6 @@ public class EffectDialog extends JDialog {
             dataset.addValue(codeInfoAna.getAiXcoder_listsize(), "平均推荐代码列表长度", "aiXcoder");
         }
 
-
         return dataset;
     }
 
@@ -294,17 +348,15 @@ public class EffectDialog extends JDialog {
      */
     public void initBasePane() {
         setContentPane(contentPane);
-        contentPane.setBounds(50, 50, 1400, 1300);
+//        contentPane.setBounds(50, 50, 1400, 1300);
         setModal(true);
         setTitle("Efficiency Evaluation");
 //        setSize(1500, 1400); // 设置窗口大小 2018/3/29 19:08
         Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-        int Swing1x = 1200;
+        int Swing1x = 1600;
         int Swing1y = 550;
         setBounds((screensize.width - Swing1x) / 2, (screensize.height - Swing1y) / 2 - 100, Swing1x, Swing1y);
-        SimpleDateFormat tf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         defaultEffectTableModel = new DefaultTableModel();
-
     }
 
     /**

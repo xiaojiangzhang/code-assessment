@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>Coder_Plugin</id>
     <name>Coder_Plugin</name>
-    <version>1.2</version>
+    <version>V1.6</version>
     <vendor email="xiaojiang_719@163.com" url="http://www.xiaojiangzhang.top">CodeQuality</vendor>
 
     <!--    <description><![CDATA[-->

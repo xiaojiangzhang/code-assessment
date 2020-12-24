@@ -55,7 +55,7 @@ public class MainComponent implements ProjectComponent {
         //初始化数据库连接池
         MySourceDataPool.init();
 //        初始化线程池
-        MyThreadPool.init();
+        //MyThreadPool.init();
         //        获取当前mac地址
         /**db：admin {id, mac, tableName}
          * 判断mac在不在db里

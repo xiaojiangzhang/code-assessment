@@ -1,5 +1,8 @@
 package com.tools;
 
+import com.intellij.openapi.ui.Messages;
+import org.jetbrains.annotations.NotNull;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +30,6 @@ import javax.swing.event.ChangeListener;
  *
  * YouAreStupid 收集网上靠谱的例子，修改后的Swing日期
  * 时间选择器,因为修改时间匆忙，希望有时间的朋友继续改进。
- * 例子原作者:zjw
- * 修改/完善：YouAreStupid
  */
 public class Time2 extends JButton {
 
@@ -36,7 +37,8 @@ public class Time2 extends JButton {
     private static String preLabel = "";
     private String originalText = null;
     private SimpleDateFormat sdf = null;
-
+    private int mmm=0;
+    private int nnn=0;
 
     public Time2() {
         this(getNowDate());
@@ -87,7 +89,11 @@ public class Time2 extends JButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (dateChooser == null) {
-                    dateChooser = new DateChooser();
+                    try {
+                        dateChooser = new DateChooser();
+                    } catch (ParseException parseException) {
+                        parseException.printStackTrace();
+                    }
                 }
                 Point p = getLocationOnScreen();
                 p.y = p.y + 30;
@@ -189,7 +195,7 @@ public class Time2 extends JButton {
         int startYear = 1980; // 默认【最小】显示年份
         int lastYear = 2050; // 默认【最大】显示年份
         int width = 800; // 界面宽度
-        int height = 400; // 界面高度
+        int height = 150; // 界面高度
 
         Color backGroundColor = Color.WHITE; // 底色
         // 月历表格配色----------------//
@@ -215,7 +221,7 @@ public class Time2 extends JButton {
         JSpinner secondSpin;
         JButton[][] daysButton = new JButton[6][7];
 
-        DateChooser() {
+        DateChooser() throws ParseException {
 
             setLayout(new BorderLayout());
             setBorder(new LineBorder(backGroundColor, 2));
@@ -223,15 +229,17 @@ public class Time2 extends JButton {
             JPanel topYearAndMonth = createYearAndMonthPanal();
             add(topYearAndMonth, BorderLayout.NORTH);
             JPanel centerWeekAndDay = createWeekAndDayPanal();
-            add(centerWeekAndDay, BorderLayout.CENTER);
+            //add(centerWeekAndDay, BorderLayout.CENTER);
             JPanel buttonBarPanel = createButtonBarPanel();
-            this.add(buttonBarPanel, java.awt.BorderLayout.SOUTH);
+            this.add(buttonBarPanel, java.awt.BorderLayout.CENTER);
         }
 
-        private JPanel createYearAndMonthPanal() {
+        private JPanel createYearAndMonthPanal() throws ParseException {
             Calendar c = getCalendar();
+            Calendar cal = Calendar.getInstance();
             int currentYear = c.get(Calendar.YEAR);
             int currentMonth = c.get(Calendar.MONTH) + 1;
+            int currentDay = c.get(Calendar.DAY_OF_MONTH);
             int currentHour = c.get(Calendar.HOUR_OF_DAY);
             int currentMinute = c.get(Calendar.MINUTE);
             int currentSecond = c.get(Calendar.SECOND);
@@ -241,7 +249,7 @@ public class Time2 extends JButton {
             result.setBackground(controlLineColor);
 
             yearSpin = new JSpinner(new SpinnerNumberModel(currentYear, startYear, lastYear, 1));
-            yearSpin.setPreferredSize(new Dimension(80, 40));
+            yearSpin.setPreferredSize(new Dimension(100, 40));
             yearSpin.setName("Year");
             yearSpin.setEditor(new JSpinner.NumberEditor(yearSpin, "####"));
             yearSpin.addChangeListener(this);
@@ -252,7 +260,7 @@ public class Time2 extends JButton {
             result.add(yearLabel);
 
             monthSpin = new JSpinner(new SpinnerNumberModel(currentMonth, 1, 12, 1));
-            monthSpin.setPreferredSize(new Dimension(80, 40));
+            monthSpin.setPreferredSize(new Dimension(100, 40));
             monthSpin.setName("Month");
             monthSpin.addChangeListener(this);
             result.add(monthSpin);
@@ -262,11 +270,14 @@ public class Time2 extends JButton {
             result.add(monthLabel);
 
             //如果这里要能够选择,会要判断很多东西,比如每个月分别由多少日,以及闰年问题.所以,就干脆把Enable设为false
-            daySpin = new JSpinner(new SpinnerNumberModel(currentMonth, 1, 31, 1));
-            daySpin.setPreferredSize(new Dimension(80, 40));
+            //int dd = Calendar.DAY_OF_MONTH;
+            SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM");
+            cal.setTime(simpleDate.parse(yearSpin.getValue()+"/"+monthSpin.getValue()));
+            daySpin = new JSpinner(new SpinnerNumberModel(currentDay, 1, cal.getActualMaximum(Calendar.DAY_OF_MONTH), 1));
+            daySpin.setPreferredSize(new Dimension(100, 40));
             daySpin.setName("Day");
             daySpin.addChangeListener(this);
-            daySpin.setEnabled(false);
+            //daySpin.setEnabled(false);
             daySpin.setToolTipText("请下下面的日历面板中进行选择哪一天！");
             result.add(daySpin);
 
@@ -275,7 +286,7 @@ public class Time2 extends JButton {
             result.add(dayLabel);
 
             hourSpin = new JSpinner(new SpinnerNumberModel(currentHour, 0, 23, 1));
-            hourSpin.setPreferredSize(new Dimension(80, 40));
+            hourSpin.setPreferredSize(new Dimension(100, 40));
             hourSpin.setName("Hour");
             hourSpin.addChangeListener(this);
             result.add(hourSpin);
@@ -285,7 +296,7 @@ public class Time2 extends JButton {
             result.add(hourLabel);
 
             minuteSpin = new JSpinner(new SpinnerNumberModel(currentMinute, 0, 59, 1));
-            minuteSpin.setPreferredSize(new Dimension(80, 40));
+            minuteSpin.setPreferredSize(new Dimension(100, 40));
             minuteSpin.setName("Minute");
             minuteSpin.addChangeListener(this);
             result.add(minuteSpin);
@@ -295,7 +306,7 @@ public class Time2 extends JButton {
             result.add(minuteLabel);
 
             secondSpin = new JSpinner(new SpinnerNumberModel(currentSecond, 0, 59, 1));
-            secondSpin.setPreferredSize(new Dimension(80, 40));
+            secondSpin.setPreferredSize(new Dimension(100, 40));
             secondSpin.setName("Second");
             secondSpin.addChangeListener(this);
             result.add(secondSpin);
@@ -448,6 +459,10 @@ public class Time2 extends JButton {
             return ((Integer) monthSpin.getValue()).intValue();
         }
 
+        private int getSelectedDay() {
+            return ((Integer) daySpin.getValue()).intValue();
+        }
+
         private int getSelectedHour() {
             return ((Integer) hourSpin.getValue()).intValue();
         }
@@ -492,12 +507,47 @@ public class Time2 extends JButton {
             dayColorUpdate(false);
         }
 
+        //判断日期不符合
+        private boolean judgeDate(int year,int month,int day){
+            Calendar c = getCalendar();
+            SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM");
+            boolean flag = true;
+            try {
+                c.setTime(simpleDate.parse(year+"/"+month));
+                //daySpin = new JSpinner(new SpinnerNumberModel(getSelectedDay(), 1, c.getActualMaximum(Calendar.DAY_OF_MONTH), 1));
+                if (c.getActualMaximum(Calendar.DAY_OF_MONTH)<day){
+                    Messages.showMessageDialog("天数与年月不符，请重新输入天数！", "提示", Messages.getInformationIcon());
+                    flag = false;
+                }
+            } catch (ParseException parseException) {
+                parseException.printStackTrace();
+            }
+            return flag;
+        }
+
+        //按年月获取天数
+        private int getDays(int year,int month){
+            Calendar c = getCalendar();
+            SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy/MM");
+
+            try {
+                c.setTime(simpleDate.parse(year+"/"+month));
+
+            } catch (ParseException parseException) {
+                parseException.printStackTrace();
+            }
+            return c.getActualMaximum(Calendar.DAY_OF_MONTH);
+        }
+
         /**
          * 选择日期时的响应事件
          */
         @Override
         public void stateChanged(ChangeEvent e) {
             JSpinner source = (JSpinner) e.getSource();
+            //JSpinner j =new JSpinner();
+            //int n = (int)j.getValue();
+            System.out.println(source);
             Calendar c = getCalendar();
             if (source.getName().equals("Hour")) {
                 c.set(Calendar.HOUR_OF_DAY, getSelectedHour());
@@ -509,19 +559,40 @@ public class Time2 extends JButton {
                 setDate(c.getTime());
                 return;
             }
+            if (source.getName().equals("Day")) {
+
+
+                boolean k = judgeDate((int)yearSpin.getValue(),(int)monthSpin.getValue(),getSelectedDay());
+                if(!k){
+                    daySpin.setValue(getSelectedDay()-1);
+                    //c.set(Calendar.DAY_OF_MONTH, getSelectedDay()-1);
+                    //setDate(c.getTime());
+                }
+                c.set(Calendar.DAY_OF_MONTH, (int)daySpin.getValue());
+                setDate(c.getTime());
+                return;
+            }
+
             if (source.getName().equals("Second")) {
                 c.set(Calendar.SECOND, getSelectedSecond());
                 setDate(c.getTime());
                 return;
             }
 
-            dayColorUpdate(true);
+            //dayColorUpdate(true);
 
             if (source.getName().equals("Year")) {
                 c.set(Calendar.YEAR, getSelectedYear());
             } else if (source.getName().equals("Month")) {
-                c.set(Calendar.MONTH, getSelectedMonth() - 1);
+
+                int ddd = getDays((int)yearSpin.getValue(),(int)monthSpin.getValue());
+                if(ddd<(int)daySpin.getValue()){
+                    daySpin.setValue(ddd);
+                    c.set(Calendar.DAY_OF_MONTH, (int)daySpin.getValue());
+                }
+                c.set(Calendar.MONTH, getSelectedMonth()-1);
             }
+
             setDate(c.getTime());
             flushWeekAndDay();
         }
@@ -530,7 +601,7 @@ public class Time2 extends JButton {
          * 选择日期时的响应事件
          */
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(@NotNull ActionEvent e) {
             JButton source = (JButton) e.getSource();
             if (source.getText().length() == 0) {
                 return;
@@ -564,7 +635,6 @@ public class Time2 extends JButton {
         int w = mainFrame.getWidth();
         int h = mainFrame.getHeight();
         mainFrame.setLocation((width - w) / 2, (height - h) / 2);
-
         mainFrame.setVisible(true);
     }
 }
